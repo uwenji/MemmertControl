@@ -115,3 +115,79 @@ it should like this
 ```
 it shown `"Temp1Read": 28.7,` ! Great we connect Memmert device successfully! 
 
+### Running
+run
+```bash
+rm -r __pycache__ 2>/dev/null || true
+
+# Check current status
+python3 memmert_cli.py --ip 192.168.100.100 status
+# Apply settings with validation
+python3 memmert_cli.py --ip 192.168.100.100 apply settings.json 
+# Monitor continuously (every 30 seconds) 
+python3 memmert_cli.py --ip 192.168.100.100 monitor --interval 30 
+# Monitor for a specific duration 
+python3 memmert_cli.py --ip 192.168.100.100 monitor --interval 10 --duration 3600
+
+```
+check status `python3 -m json.tool status.json`
+```json
+{
+  "timestamp": "2025-08-11T10:30:00",
+  "setpoints": {
+    "TempSet": 25.0,
+    "HumSet": 40.0,
+    "CO2Set": 0.0,
+    "O2Set": null,
+    "FanSet": null
+  },
+  "readings": {
+    "Temp1Read": 29.9,
+    "HumRead": 45.5,
+    "CO2Read": 0.0,
+    "O2Read": null,
+    "FanRead": null
+  }
+}
+```
+
+on the terminal running `status`
+``` bash
+==================================================
+📊 INCUBATOR STATUS - 2025-08-11T09:55:02.282003
+==================================================
+
+📋 SETPOINTS:
+  TempSet     :   25.0 °C
+  HumSet      :   40.0 % RH
+  CO2Set      :    0.0 %
+  O2Set       : N/A
+  FanSet      : N/A
+
+📈 CURRENT READINGS:
+  Temp1Read   :   29.3 °C
+  HumRead     :   39.6 % RH
+  CO2Read     :    0.0 %
+  O2Read      : N/A
+  FanRead     : N/A
+==================================================
+
+
+📄 Status saved to: /home/pi/Desktop/MemmertControl/status.json
+
+```
+
+`settings`
+```bash
+
+🔧 Applying settings from: settings.json
+
+📝 Settings to apply:
+  TempSet: 25.0
+  HumSet: 50
+  CO2Set: 1.0
+
+✓ TempSet: 25.0 → 25.0
+✓ HumSet: 50 → 50.0
+✓ CO2Set: 1.0 → 1.0
+
