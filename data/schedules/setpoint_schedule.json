@@ -16,18 +16,18 @@
   },
   "schedule": [
     {
-      "timestamp": "2025-10-23T08:20:00.000Z",
+      "timestamp": "2025-10-23T14:26:00.000Z",
       "setpoints": {
         "TempSet": 25,
-        "HumSet": 80,
+        "HumSet": 30,
         "CO2Set": 0
       }
     },
     {
-      "timestamp": "2025-10-23T08:22:00.000Z",
+      "timestamp": "2025-10-23T15:25:00.000Z",
       "setpoints": {
         "TempSet": 25,
-        "HumSet": 50,
+        "HumSet": 40,
         "CO2Set": 0
       }
     }
