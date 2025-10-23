@@ -9,17 +9,14 @@
     "categories": [
       "Temperature",
       "Humidity",
-      "CO2",
-      "Fan",
-      "CO",
-      "O"
+      "CO2"
     ],
     "timeZone": "Europe/Copenhagen",
     "futureHours": 24
   },
   "schedule": [
     {
-      "timestamp": "2025-10-23T08:11:00.000Z",
+      "timestamp": "2025-10-23T08:20:00.000Z",
       "setpoints": {
         "TempSet": 25,
         "HumSet": 80,
@@ -27,7 +24,7 @@
       }
     },
     {
-      "timestamp": "2025-10-23T08:15:00.000Z",
+      "timestamp": "2025-10-23T08:22:00.000Z",
       "setpoints": {
         "TempSet": 25,
         "HumSet": 50,
@@ -37,7 +34,7 @@
   ],
   "statistics": {
     "totalPoints": 2,
-    "timeSpan": "20 hours",
+    "timeSpan": "1 hours",
     "variableRanges": {
       "TempSet": {
         "min": 25,
