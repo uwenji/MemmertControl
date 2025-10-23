@@ -93,7 +93,7 @@ if __name__ == '__main__':
     if len(sys.argv) < 2:
         print("Usage: python apply_schedule_entry.py <schedule_file> [entry_index] [ip]")
         print("\nExample:")
-        print("  python apply_schedule_entry.py data/schedules/setpoint_schedule_2025-09-11T08-35-12.json 0")
+        print("  python apply_schedule_entry.py data/schedules/setpoint_schedule.json 0")
         print("\nThis will apply the first entry (index 0) from the schedule.")
         sys.exit(1)
     
