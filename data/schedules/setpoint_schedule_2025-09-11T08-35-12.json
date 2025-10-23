@@ -19,134 +19,24 @@
   },
   "schedule": [
     {
-      "timestamp": "2025-09-11T08:19:45.713Z",
+      "timestamp": "2025-10-23T08:11:00.000Z",
       "setpoints": {
         "TempSet": 25,
-        "HumSet": 40,
-        "CO2Set": 400,
-        "FanSet": 50
+        "HumSet": 80,
+        "CO2Set": 0
       }
     },
     {
-      "timestamp": "2025-09-11T10:15:00.000Z",
+      "timestamp": "2025-10-23T08:15:00.000Z",
       "setpoints": {
         "TempSet": 25,
-        "HumSet": 40,
-        "CO2Set": 400,
-        "FanSet": 50
-      }
-    },
-    {
-      "timestamp": "2025-09-11T11:30:00.000Z",
-      "setpoints": {
-        "TempSet": 25,
-        "HumSet": 40,
-        "CO2Set": 400,
-        "FanSet": 50
-      }
-    },
-    {
-      "timestamp": "2025-09-11T13:00:00.000Z",
-      "setpoints": {
-        "TempSet": 25,
-        "HumSet": 40,
-        "CO2Set": 400,
-        "FanSet": 50
-      }
-    },
-    {
-      "timestamp": "2025-09-11T14:15:00.000Z",
-      "setpoints": {
-        "TempSet": 25,
-        "HumSet": 40,
-        "CO2Set": 400,
-        "FanSet": 50
-      }
-    },
-    {
-      "timestamp": "2025-09-11T15:30:00.000Z",
-      "setpoints": {
-        "TempSet": 25,
-        "HumSet": 40,
-        "CO2Set": 400,
-        "FanSet": 50
-      }
-    },
-    {
-      "timestamp": "2025-09-11T17:45:00.000Z",
-      "setpoints": {
-        "TempSet": 25,
-        "HumSet": 40,
-        "CO2Set": 400,
-        "FanSet": 50
-      }
-    },
-    {
-      "timestamp": "2025-09-11T20:00:00.000Z",
-      "setpoints": {
-        "TempSet": 25,
-        "HumSet": 40,
-        "CO2Set": 400,
-        "FanSet": 50
-      }
-    },
-    {
-      "timestamp": "2025-09-11T21:00:00.000Z",
-      "setpoints": {
-        "TempSet": 25,
-        "HumSet": 40,
-        "CO2Set": 400,
-        "FanSet": 50
-      }
-    },
-    {
-      "timestamp": "2025-09-11T22:30:00.000Z",
-      "setpoints": {
-        "TempSet": 25,
-        "HumSet": 40,
-        "CO2Set": 400,
-        "FanSet": 50
-      }
-    },
-    {
-      "timestamp": "2025-09-12T00:00:00.000Z",
-      "setpoints": {
-        "TempSet": 25,
-        "HumSet": 40,
-        "CO2Set": 400,
-        "FanSet": 50
-      }
-    },
-    {
-      "timestamp": "2025-09-12T01:15:00.000Z",
-      "setpoints": {
-        "TempSet": 25,
-        "HumSet": 40,
-        "CO2Set": 400,
-        "FanSet": 50
-      }
-    },
-    {
-      "timestamp": "2025-09-12T03:15:00.000Z",
-      "setpoints": {
-        "TempSet": 25,
-        "HumSet": 40,
-        "CO2Set": 400,
-        "FanSet": 50
-      }
-    },
-    {
-      "timestamp": "2025-09-12T04:45:00.000Z",
-      "setpoints": {
-        "TempSet": 25,
-        "HumSet": 40,
-        "CO2Set": 400,
-        "FanSet": 50
+        "HumSet": 50,
+        "CO2Set": 0
       }
     }
   ],
   "statistics": {
-    "totalPoints": 14,
+    "totalPoints": 2,
     "timeSpan": "20 hours",
     "variableRanges": {
       "TempSet": {
@@ -160,14 +50,9 @@
         "average": 40
       },
       "CO2Set": {
-        "min": 400,
-        "max": 400,
-        "average": 400
-      },
-      "FanSet": {
-        "min": 50,
-        "max": 50,
-        "average": 50
+        "min": 0.2,
+        "max": 1,
+        "average": 0
       }
     }
   }
