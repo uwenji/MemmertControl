@@ -1,0 +1,75 @@
+2025-10-23 15:48:01 - INFO - Connected to Memmert device at 192.168.100.100
+2025-10-23 15:48:01 - INFO - Current setpoints: {'TempSet': 25.0, 'HumSet': 80.0, 'CO2Set': 0.0, 'O2Set': None, 'FanSet': None}
+2025-10-23 15:48:01 - INFO - Loaded schedule with 2 setpoints
+2025-10-23 15:48:01 - INFO - Running single check...
+2025-10-23 15:48:01 - INFO - No scheduled setpoints found
+2025-10-23 15:49:01 - INFO - Connected to Memmert device at 192.168.100.100
+2025-10-23 15:49:01 - INFO - Current setpoints: {'TempSet': 25.0, 'HumSet': 80.0, 'CO2Set': 0.0, 'O2Set': None, 'FanSet': None}
+2025-10-23 15:49:01 - INFO - Loaded schedule with 2 setpoints
+2025-10-23 15:49:01 - INFO - Running single check...
+2025-10-23 15:49:01 - INFO - No scheduled setpoints found
+2025-10-23 15:50:02 - INFO - Connected to Memmert device at 192.168.100.100
+2025-10-23 15:50:02 - INFO - Current setpoints: {'TempSet': 25.0, 'HumSet': 80.0, 'CO2Set': 0.0, 'O2Set': None, 'FanSet': None}
+2025-10-23 15:50:02 - INFO - Loaded schedule with 2 setpoints
+2025-10-23 15:50:02 - INFO - Running single check...
+2025-10-23 15:50:02 - INFO - No scheduled setpoints found
+2025-10-23 15:51:01 - INFO - Connected to Memmert device at 192.168.100.100
+2025-10-23 15:51:01 - INFO - Current setpoints: {'TempSet': 25.0, 'HumSet': 80.0, 'CO2Set': 0.0, 'O2Set': None, 'FanSet': None}
+2025-10-23 15:51:01 - INFO - Loaded schedule with 2 setpoints
+2025-10-23 15:51:01 - INFO - Running single check...
+2025-10-23 15:51:01 - INFO - No scheduled setpoints found
+2025-10-23 15:52:01 - INFO - Connected to Memmert device at 192.168.100.100
+2025-10-23 15:52:01 - INFO - Current setpoints: {'TempSet': 25.0, 'HumSet': 80.0, 'CO2Set': 0.0, 'O2Set': None, 'FanSet': None}
+2025-10-23 15:52:01 - INFO - Loaded schedule with 2 setpoints
+2025-10-23 15:52:01 - INFO - Running single check...
+2025-10-23 15:52:01 - INFO - No scheduled setpoints found
+2025-10-23 15:53:01 - INFO - Connected to Memmert device at 192.168.100.100
+2025-10-23 15:53:02 - INFO - Current setpoints: {'TempSet': 25.0, 'HumSet': 80.0, 'CO2Set': 0.0, 'O2Set': None, 'FanSet': None}
+2025-10-23 15:53:02 - INFO - Loaded schedule with 2 setpoints
+2025-10-23 15:53:02 - INFO - Running single check...
+2025-10-23 15:53:02 - INFO - No scheduled setpoints found
+2025-10-23 15:54:02 - INFO - Connected to Memmert device at 192.168.100.100
+2025-10-23 15:54:02 - INFO - Current setpoints: {'TempSet': 25.0, 'HumSet': 80.0, 'CO2Set': 0.0, 'O2Set': None, 'FanSet': None}
+2025-10-23 15:54:02 - INFO - Loaded schedule with 2 setpoints
+2025-10-23 15:54:02 - INFO - Running single check...
+2025-10-23 15:54:02 - INFO - No scheduled setpoints found
+2025-10-23 15:55:02 - INFO - Connected to Memmert device at 192.168.100.100
+2025-10-23 15:55:02 - INFO - Current setpoints: {'TempSet': 25.0, 'HumSet': 80.0, 'CO2Set': 0.0, 'O2Set': None, 'FanSet': None}
+2025-10-23 15:55:02 - INFO - Loaded schedule with 2 setpoints
+2025-10-23 15:55:02 - INFO - Running single check...
+2025-10-23 15:55:02 - INFO - No scheduled setpoints found
+2025-10-23 15:56:02 - INFO - Connected to Memmert device at 192.168.100.100
+2025-10-23 15:56:02 - INFO - Current setpoints: {'TempSet': 25.0, 'HumSet': 80.0, 'CO2Set': 0.0, 'O2Set': None, 'FanSet': None}
+2025-10-23 15:56:02 - INFO - Loaded schedule with 2 setpoints
+2025-10-23 15:56:02 - INFO - Running single check...
+2025-10-23 15:56:02 - INFO - No scheduled setpoints found
+2025-10-23 15:57:02 - INFO - Connected to Memmert device at 192.168.100.100
+2025-10-23 15:57:03 - INFO - Current setpoints: {'TempSet': 25.0, 'HumSet': 80.0, 'CO2Set': 0.0, 'O2Set': None, 'FanSet': None}
+2025-10-23 15:57:03 - INFO - Loaded schedule with 2 setpoints
+2025-10-23 15:57:03 - INFO - Running single check...
+2025-10-23 15:57:03 - INFO - No scheduled setpoints found
+2025-10-23 15:58:02 - INFO - Connected to Memmert device at 192.168.100.100
+2025-10-23 15:58:02 - INFO - Current setpoints: {'TempSet': 25.0, 'HumSet': 80.0, 'CO2Set': 0.0, 'O2Set': None, 'FanSet': None}
+2025-10-23 15:58:02 - INFO - Loaded schedule with 2 setpoints
+2025-10-23 15:58:02 - INFO - Running single check...
+2025-10-23 15:58:02 - INFO - No scheduled setpoints found
+2025-10-23 15:59:02 - INFO - Connected to Memmert device at 192.168.100.100
+2025-10-23 15:59:02 - INFO - Current setpoints: {'TempSet': 25.0, 'HumSet': 80.0, 'CO2Set': 0.0, 'O2Set': None, 'FanSet': None}
+2025-10-23 15:59:02 - INFO - Loaded schedule with 2 setpoints
+2025-10-23 15:59:02 - INFO - Running single check...
+2025-10-23 15:59:02 - INFO - No scheduled setpoints found
+2025-10-23 16:00:02 - INFO - Connected to Memmert device at 192.168.100.100
+2025-10-23 16:00:02 - INFO - Current setpoints: {'TempSet': 25.0, 'HumSet': 80.0, 'CO2Set': 0.0, 'O2Set': None, 'FanSet': None}
+2025-10-23 16:00:02 - INFO - Loaded schedule with 2 setpoints
+2025-10-23 16:00:02 - INFO - Running single check...
+2025-10-23 16:00:02 - INFO - No scheduled setpoints found
+2025-10-23 16:01:01 - INFO - Connected to Memmert device at 192.168.100.100
+2025-10-23 16:01:02 - INFO - Current setpoints: {'TempSet': 25.0, 'HumSet': 80.0, 'CO2Set': 0.0, 'O2Set': None, 'FanSet': None}
+2025-10-23 16:01:02 - INFO - Loaded schedule with 2 setpoints
+2025-10-23 16:01:02 - INFO - Running single check...
+2025-10-23 16:01:02 - INFO - No scheduled setpoints found
+2025-10-23 16:02:02 - INFO - Connected to Memmert device at 192.168.100.100
+2025-10-23 16:02:03 - INFO - Current setpoints: {'TempSet': 25.0, 'HumSet': 80.0, 'CO2Set': 0.0, 'O2Set': None, 'FanSet': None}
+2025-10-23 16:02:03 - INFO - Loaded schedule with 2 setpoints
+2025-10-23 16:02:03 - INFO - Running single check...
+2025-10-23 16:02:03 - INFO - No scheduled setpoints found
