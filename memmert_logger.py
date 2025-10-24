@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """
-Memmert Data Logger
+Memmert Data Logger - Cron-friendly version with SSH key handling
 Logs incubator readings and setpoints to a rolling JSON history file and pushes to GitHub.
 """
 import json
 import logging
 import sys
+import os
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Dict, Any, Optional
@@ -49,9 +50,30 @@ class MemmertDataLogger:
         else:
             # Assume the git repo is the project root
             self.git_repo_path = log_file.parent.parent.parent
-        
+
         # Setup logging
         self.logger = logging.getLogger(__name__)
+
+        # Setup SSH for git (for cron compatibility)
+        self._setup_git_ssh()
+        
+    
+    def _setup_git_ssh(self):
+        """Setup SSH configuration for git to work in cron."""
+        # Find SSH key
+        ssh_key = None
+        home = Path.home()
+        
+        for key_name in ['id_ed25519', 'id_rsa']:
+            key_path = home / '.ssh' / key_name
+            if key_path.exists():
+                ssh_key = str(key_path)
+                break
+        
+        if ssh_key:
+            # Set GIT_SSH_COMMAND to use the SSH key directly
+            os.environ['GIT_SSH_COMMAND'] = f'ssh -i {ssh_key} -o IdentitiesOnly=yes -o StrictHostKeyChecking=no'
+            self.logger.debug(f"Using SSH key: {ssh_key}")
     
     def read_current_data(self) -> Dict[str, Any]:
         """
@@ -216,7 +238,6 @@ class MemmertDataLogger:
             original_dir = Path.cwd()
             
             try:
-                import os
                 os.chdir(self.git_repo_path)
                 
                 # Get relative path of log file from repo root
@@ -259,6 +280,18 @@ class MemmertDataLogger:
                     self.logger.error(f"Git commit failed: {result.stderr}")
                     return False
                 
+                # Pull first to avoid conflicts
+                result = subprocess.run(
+                    ['git', 'pull', '--rebase'],
+                    capture_output=True,
+                    text=True,
+                    timeout=30
+                )
+                
+                if result.returncode != 0:
+                    self.logger.warning(f"Git pull had issues: {result.stderr}")
+                    # Try to continue anyway
+                
                 # Push to GitHub
                 result = subprocess.run(
                     ['git', 'push'],
@@ -269,7 +302,12 @@ class MemmertDataLogger:
                 
                 if result.returncode != 0:
                     self.logger.error(f"Git push failed: {result.stderr}")
-                    return False
+                    # Try pull and push again
+                    self.logger.info("Trying pull and push again...")
+                    subprocess.run(['git', 'pull', '--rebase'], capture_output=True, timeout=30)
+                    result = subprocess.run(['git', 'push'], capture_output=True, text=True, timeout=30)
+                    if result.returncode != 0:
+                        return False
                 
                 self.logger.info("✓ Committed and pushed to GitHub")
                 return True
