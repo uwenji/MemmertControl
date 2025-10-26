@@ -4,9 +4,9 @@
     "device_ip": "192.168.100.100:80",
     "max_hours": 3.0,
     "description": "Rolling history of Memmert incubator data",
-    "last_updated": "2025-10-26T02:22:03.036619",
-    "total_entries": 203,
-    "time_span_hours": 2.37
+    "last_updated": "2025-10-26T02:23:03.116762",
+    "total_entries": 204,
+    "time_span_hours": 2.38
   },
   "data": [
     {
@@ -3647,6 +3647,24 @@
     },
     {
       "timestamp": "2025-10-26T02:22:01.903423",
+      "mode": "Timer",
+      "readings": {
+        "Temp1Read": 26.7,
+        "HumRead": 80.3,
+        "CO2Read": 0.0,
+        "O2Read": null,
+        "FanRead": null
+      },
+      "setpoints": {
+        "TempSet": 25.0,
+        "HumSet": 80.0,
+        "CO2Set": 0.0,
+        "O2Set": null,
+        "FanSet": null
+      }
+    },
+    {
+      "timestamp": "2025-10-26T02:23:02.010196",
       "mode": "Timer",
       "readings": {
         "Temp1Read": 26.7,
