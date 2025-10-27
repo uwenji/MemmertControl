@@ -1,7 +1,7 @@
 {
   "runId": "run_001_baseline_test",
   "sampleInterval_sec": 1,
-  "totalSamples": 50,
+  "totalSamples": 30,
   "startTime": "2025-10-27T16:52:49.695Z",
   "variables": [
     "Temp1Read",
@@ -13,351 +13,211 @@
   ],
   "data": [
     {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
+      "timestamp": "2025-10-27T16:52:53.311Z",
+      "elapsed_sec": 4,
       "readings": {},
       "setpoints": {},
       "incubatorReadings": {}
     },
     {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
+      "timestamp": "2025-10-27T16:52:53.311Z",
+      "elapsed_sec": 4,
       "readings": {},
       "setpoints": {},
       "incubatorReadings": {}
     },
     {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
+      "timestamp": "2025-10-27T16:52:53.311Z",
+      "elapsed_sec": 4,
       "readings": {},
       "setpoints": {},
       "incubatorReadings": {}
     },
     {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
+      "timestamp": "2025-10-27T16:52:53.311Z",
+      "elapsed_sec": 4,
       "readings": {},
       "setpoints": {},
       "incubatorReadings": {}
     },
     {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
+      "timestamp": "2025-10-27T16:52:53.311Z",
+      "elapsed_sec": 4,
       "readings": {},
       "setpoints": {},
       "incubatorReadings": {}
     },
     {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
+      "timestamp": "2025-10-27T16:52:53.311Z",
+      "elapsed_sec": 4,
       "readings": {},
       "setpoints": {},
       "incubatorReadings": {}
     },
     {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
+      "timestamp": "2025-10-27T16:52:53.311Z",
+      "elapsed_sec": 4,
       "readings": {},
       "setpoints": {},
       "incubatorReadings": {}
     },
     {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
+      "timestamp": "2025-10-27T16:52:53.311Z",
+      "elapsed_sec": 4,
       "readings": {},
       "setpoints": {},
       "incubatorReadings": {}
     },
     {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
+      "timestamp": "2025-10-27T16:52:53.311Z",
+      "elapsed_sec": 4,
       "readings": {},
       "setpoints": {},
       "incubatorReadings": {}
     },
     {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
+      "timestamp": "2025-10-27T16:52:53.311Z",
+      "elapsed_sec": 4,
       "readings": {},
       "setpoints": {},
       "incubatorReadings": {}
     },
     {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
+      "timestamp": "2025-10-27T16:52:53.311Z",
+      "elapsed_sec": 4,
       "readings": {},
       "setpoints": {},
       "incubatorReadings": {}
     },
     {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
+      "timestamp": "2025-10-27T16:52:53.311Z",
+      "elapsed_sec": 4,
       "readings": {},
       "setpoints": {},
       "incubatorReadings": {}
     },
     {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
+      "timestamp": "2025-10-27T16:52:53.311Z",
+      "elapsed_sec": 4,
       "readings": {},
       "setpoints": {},
       "incubatorReadings": {}
     },
     {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
+      "timestamp": "2025-10-27T16:52:53.311Z",
+      "elapsed_sec": 4,
       "readings": {},
       "setpoints": {},
       "incubatorReadings": {}
     },
     {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
+      "timestamp": "2025-10-27T16:52:53.311Z",
+      "elapsed_sec": 4,
       "readings": {},
       "setpoints": {},
       "incubatorReadings": {}
     },
     {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
+      "timestamp": "2025-10-27T16:52:53.311Z",
+      "elapsed_sec": 4,
       "readings": {},
       "setpoints": {},
       "incubatorReadings": {}
     },
     {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
+      "timestamp": "2025-10-27T16:52:53.311Z",
+      "elapsed_sec": 4,
       "readings": {},
       "setpoints": {},
       "incubatorReadings": {}
     },
     {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
+      "timestamp": "2025-10-27T16:52:53.311Z",
+      "elapsed_sec": 4,
       "readings": {},
       "setpoints": {},
       "incubatorReadings": {}
     },
     {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
+      "timestamp": "2025-10-27T16:52:53.311Z",
+      "elapsed_sec": 4,
       "readings": {},
       "setpoints": {},
       "incubatorReadings": {}
     },
     {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
+      "timestamp": "2025-10-27T16:52:53.311Z",
+      "elapsed_sec": 4,
       "readings": {},
       "setpoints": {},
       "incubatorReadings": {}
     },
     {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
+      "timestamp": "2025-10-27T16:52:53.311Z",
+      "elapsed_sec": 4,
       "readings": {},
       "setpoints": {},
       "incubatorReadings": {}
     },
     {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
+      "timestamp": "2025-10-27T16:52:53.311Z",
+      "elapsed_sec": 4,
       "readings": {},
       "setpoints": {},
       "incubatorReadings": {}
     },
     {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
+      "timestamp": "2025-10-27T16:52:53.311Z",
+      "elapsed_sec": 4,
       "readings": {},
       "setpoints": {},
       "incubatorReadings": {}
     },
     {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
+      "timestamp": "2025-10-27T16:52:53.311Z",
+      "elapsed_sec": 4,
       "readings": {},
       "setpoints": {},
       "incubatorReadings": {}
     },
     {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
+      "timestamp": "2025-10-27T16:52:53.311Z",
+      "elapsed_sec": 4,
       "readings": {},
       "setpoints": {},
       "incubatorReadings": {}
     },
     {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
+      "timestamp": "2025-10-27T16:52:53.311Z",
+      "elapsed_sec": 4,
       "readings": {},
       "setpoints": {},
       "incubatorReadings": {}
     },
     {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
+      "timestamp": "2025-10-27T16:52:53.311Z",
+      "elapsed_sec": 4,
       "readings": {},
       "setpoints": {},
       "incubatorReadings": {}
     },
     {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
+      "timestamp": "2025-10-27T16:52:53.311Z",
+      "elapsed_sec": 4,
       "readings": {},
       "setpoints": {},
       "incubatorReadings": {}
     },
     {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
+      "timestamp": "2025-10-27T16:52:53.311Z",
+      "elapsed_sec": 4,
       "readings": {},
       "setpoints": {},
       "incubatorReadings": {}
     },
     {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
-      "readings": {},
-      "setpoints": {},
-      "incubatorReadings": {}
-    },
-    {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
-      "readings": {},
-      "setpoints": {},
-      "incubatorReadings": {}
-    },
-    {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
-      "readings": {},
-      "setpoints": {},
-      "incubatorReadings": {}
-    },
-    {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
-      "readings": {},
-      "setpoints": {},
-      "incubatorReadings": {}
-    },
-    {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
-      "readings": {},
-      "setpoints": {},
-      "incubatorReadings": {}
-    },
-    {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
-      "readings": {},
-      "setpoints": {},
-      "incubatorReadings": {}
-    },
-    {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
-      "readings": {},
-      "setpoints": {},
-      "incubatorReadings": {}
-    },
-    {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
-      "readings": {},
-      "setpoints": {},
-      "incubatorReadings": {}
-    },
-    {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
-      "readings": {},
-      "setpoints": {},
-      "incubatorReadings": {}
-    },
-    {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
-      "readings": {},
-      "setpoints": {},
-      "incubatorReadings": {}
-    },
-    {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
-      "readings": {},
-      "setpoints": {},
-      "incubatorReadings": {}
-    },
-    {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
-      "readings": {},
-      "setpoints": {},
-      "incubatorReadings": {}
-    },
-    {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
-      "readings": {},
-      "setpoints": {},
-      "incubatorReadings": {}
-    },
-    {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
-      "readings": {},
-      "setpoints": {},
-      "incubatorReadings": {}
-    },
-    {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
-      "readings": {},
-      "setpoints": {},
-      "incubatorReadings": {}
-    },
-    {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
-      "readings": {},
-      "setpoints": {},
-      "incubatorReadings": {}
-    },
-    {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
-      "readings": {},
-      "setpoints": {},
-      "incubatorReadings": {}
-    },
-    {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
-      "readings": {},
-      "setpoints": {},
-      "incubatorReadings": {}
-    },
-    {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
-      "readings": {},
-      "setpoints": {},
-      "incubatorReadings": {}
-    },
-    {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
-      "readings": {},
-      "setpoints": {},
-      "incubatorReadings": {}
-    },
-    {
-      "timestamp": "2025-10-27T16:52:52.199Z",
-      "elapsed_sec": 3,
+      "timestamp": "2025-10-27T16:52:53.311Z",
+      "elapsed_sec": 4,
       "readings": {},
       "setpoints": {},
       "incubatorReadings": {}
