@@ -1,0 +1,55 @@
+{
+  "metadata": {
+    "generated": "2025-10-27T12:22:45.902Z",
+    "generatedBy": "DataVisualizationModal",
+    "version": "1.0",
+    "description": "Future setpoint schedule"
+  },
+  "configuration": {
+    "categories": [
+      "Temperature",
+      "Humidity"
+    ],
+    "timeZone": "Europe/Berlin",
+    "futureHours": 24
+  },
+  "schedule": [
+    {
+      "timestamp": "2025-10-27T10:34:02.715Z",
+      "setpoints": {
+        "TempSet": 25,
+        "HumSet": 80
+      }
+    },
+    {
+      "timestamp": "2025-10-27T19:45:00.000Z",
+      "setpoints": {
+        "TempSet": 25,
+        "HumSet": 80
+      }
+    },
+    {
+      "timestamp": "2025-10-28T05:00:00.000Z",
+      "setpoints": {
+        "TempSet": 35,
+        "HumSet": 72
+      }
+    }
+  ],
+  "statistics": {
+    "totalPoints": 3,
+    "timeSpan": "18 hours",
+    "variableRanges": {
+      "TempSet": {
+        "min": 25,
+        "max": 35,
+        "average": 28.333333333333332
+      },
+      "HumSet": {
+        "min": 72,
+        "max": 80,
+        "average": 77.33333333333333
+      }
+    }
+  }
+}
