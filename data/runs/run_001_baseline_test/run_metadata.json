@@ -3,7 +3,7 @@
   "runName": "baseline_test",
   "runType": "baseline",
   "status": "running",
-  "startTime": "2025-10-27T16:52:46.376Z",
+  "startTime": "2025-10-27T17:00:03.762Z",
   "endTime": null,
   "durationMinutes": null,
   "bioreactorState": {
@@ -47,26 +47,7 @@
     }
   },
   "plannedDisturbances": [],
-  "actualEvents": [
-    {
-      "timestamp": "2025-10-27T16:54:35.046Z",
-      "elapsed_sec": 105,
-      "type": "system",
-      "category": "run_pause",
-      "details": {},
-      "recordedBy": "system",
-      "notes": "Run paused"
-    },
-    {
-      "timestamp": "2025-10-27T16:54:37.678Z",
-      "elapsed_sec": 108,
-      "type": "system",
-      "category": "run_resume",
-      "details": {},
-      "recordedBy": "system",
-      "notes": "Run resumed"
-    }
-  ],
+  "actualEvents": [],
   "endConditions": {
     "type": "manual",
     "criteria": "Manual stop by operator"
