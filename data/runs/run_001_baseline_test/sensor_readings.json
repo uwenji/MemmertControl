@@ -2,7 +2,7 @@
   "runId": "run_001_baseline_test",
   "sampleInterval_sec": 1,
   "totalSamples": 0,
-  "startTime": "2025-10-27T17:14:29.785Z",
+  "startTime": "2025-10-27T17:25:24.176Z",
   "variables": [
     "Temp1Read",
     "HumRead",
