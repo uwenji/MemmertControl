@@ -1,8 +1,8 @@
 {
   "runId": "run_001_baseline_test",
   "sampleInterval_sec": 1,
-  "totalSamples": 0,
-  "startTime": "2025-10-27T16:52:46.376Z",
+  "totalSamples": 50,
+  "startTime": "2025-10-27T16:52:49.695Z",
   "variables": [
     "Temp1Read",
     "HumRead",
@@ -11,5 +11,356 @@
     "HumSet",
     "CO2Set"
   ],
-  "data": []
+  "data": [
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-27T16:52:50.092Z",
+      "elapsed_sec": 0,
+      "readings": {},
+      "setpoints": {},
+      "incubatorReadings": {}
+    }
+  ]
 }
