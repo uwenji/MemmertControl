@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "lastUpdated": "2025-10-28T10:22:09.086Z",
-  "totalRuns": 3,
+  "lastUpdated": "2025-10-28T10:30:48.456Z",
+  "totalRuns": 4,
   "runs": [
     {
       "runId": "run_001_baseline_test",
@@ -48,6 +48,18 @@
         "totalMinutes": 1,
         "formatted": "0h 1m"
       }
+    },
+    {
+      "runId": "run_004_baseline_test",
+      "runName": "baseline_test",
+      "runType": "baseline",
+      "date": "2025-10-28",
+      "startTime": "2025-10-28T10:30:45.059Z",
+      "startedAt": "2025-10-28T10:30:45.059Z",
+      "status": "running",
+      "dataPath": "data/runs/run_004_baseline_test/",
+      "tags": [],
+      "quality": "pending"
     }
   ]
 }
