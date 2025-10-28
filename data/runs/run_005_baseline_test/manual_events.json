@@ -1,4 +1,17 @@
 {
   "runId": "run_005_baseline_test",
-  "events": []
+  "events": [
+    {
+      "timestamp": "2025-10-28T10:49:40.443Z",
+      "elapsed_sec": 571,
+      "type": "system",
+      "category": "run_stop",
+      "details": {
+        "reason": "manual",
+        "duration_min": 10
+      },
+      "recordedBy": "system",
+      "notes": ""
+    }
+  ]
 }
