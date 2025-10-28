@@ -1,12 +1,12 @@
 {
   "runId": "run_008_baseline_test",
-  "totalActions": 1,
+  "totalActions": 2,
   "description": "PID control actions (one per poll interval)",
   "actions": [
     {
-      "timestamp": "2025-10-28T12:36:57.418Z",
-      "elapsed_sec": 186,
-      "iteration": 3,
+      "timestamp": "2025-10-28T12:37:57.523Z",
+      "elapsed_sec": 246,
+      "iteration": 4,
       "targets": {
         "TempTarget": 25,
         "HumTarget": 50,
@@ -15,31 +15,31 @@
         "FanTarget": 50
       },
       "readings": {
-        "Temp1Read": 29.021,
-        "HumRead": 24.634,
+        "Temp1Read": 29.018,
+        "HumRead": 24.592,
         "CO2Read": null,
         "O2Read": null,
         "FanRead": null
       },
       "errors": {
-        "Temp": -4.021000000000001,
-        "Hum": 25.366,
+        "Temp": -4.018000000000001,
+        "Hum": 25.408,
         "CO2": 0,
         "O2": 0,
         "Fan": 0
       },
       "pidTerms": {
         "Temp": {
-          "P": -8.042000000000002,
+          "P": -8.036000000000001,
           "I": -5,
           "D": 0,
           "output": 10
         },
         "Hum": {
-          "P": 38.049,
+          "P": 38.112,
           "I": 10,
           "D": 0,
-          "output": 38.5
+          "output": 38.6
         },
         "CO2": {
           "P": 0,
@@ -59,14 +59,79 @@
       },
       "setpointsCalculated": {
         "TempSet": 10,
-        "HumSet": 38.5
+        "HumSet": 38.6
       },
       "setpointsApplied": {
         "TempSet": 10,
-        "HumSet": 38.5
+        "HumSet": 38.6
       },
       "overridden": false,
-      "calculationTime_ms": 656
+      "calculationTime_ms": 750
+    },
+    {
+      "timestamp": "2025-10-28T12:38:11.469Z",
+      "elapsed_sec": 260,
+      "iteration": 5,
+      "targets": {
+        "TempTarget": 25,
+        "HumTarget": 50,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "readings": {
+        "Temp1Read": 29.018,
+        "HumRead": 24.592,
+        "CO2Read": null,
+        "O2Read": null,
+        "FanRead": null
+      },
+      "errors": {
+        "Temp": -4.018000000000001,
+        "Hum": 25.408,
+        "CO2": 0,
+        "O2": 0,
+        "Fan": 0
+      },
+      "pidTerms": {
+        "Temp": {
+          "P": -8.036000000000001,
+          "I": -5,
+          "D": 0,
+          "output": 10
+        },
+        "Hum": {
+          "P": 38.112,
+          "I": 10,
+          "D": 0,
+          "output": 38.6
+        },
+        "CO2": {
+          "P": 0,
+          "I": 0,
+          "D": 0
+        },
+        "O2": {
+          "P": 0,
+          "I": 0,
+          "D": 0
+        },
+        "Fan": {
+          "P": 0,
+          "I": 0,
+          "D": 0
+        }
+      },
+      "setpointsCalculated": {
+        "TempSet": 10,
+        "HumSet": 38.6
+      },
+      "setpointsApplied": {
+        "TempSet": 10,
+        "HumSet": 38.6
+      },
+      "overridden": false,
+      "calculationTime_ms": 586
     }
   ]
 }
