@@ -1,8 +1,8 @@
 {
   "runId": "run_004_baseline_test",
   "sampleInterval_sec": 1,
-  "totalSamples": 0,
-  "startTime": "2025-10-28T10:30:45.059Z",
+  "totalSamples": 3,
+  "startTime": "2025-10-28T10:30:48.456Z",
   "variables": [
     "Temp1Read",
     "HumRead",
@@ -11,5 +11,63 @@
     "HumSet",
     "CO2Set"
   ],
-  "data": []
+  "data": [
+    {
+      "timestamp": "2025-10-28T11:31:01.956157",
+      "elapsed_sec": 14,
+      "readings": {
+        "Temp1Read": 28.989,
+        "HumRead": 24.568,
+        "CO2Read": null,
+        "O2Read": null,
+        "FanRead": null
+      },
+      "setpoints": {
+        "TempSet": 29,
+        "HumSet": 0,
+        "CO2Set": null,
+        "O2Set": null,
+        "FanSet": null
+      },
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-28T11:32:02.329321",
+      "elapsed_sec": 74,
+      "readings": {
+        "Temp1Read": 28.989,
+        "HumRead": 24.605,
+        "CO2Read": null,
+        "O2Read": null,
+        "FanRead": null
+      },
+      "setpoints": {
+        "TempSet": 29,
+        "HumSet": 0,
+        "CO2Set": null,
+        "O2Set": null,
+        "FanSet": null
+      },
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-28T11:33:02.579482",
+      "elapsed_sec": 134,
+      "readings": {
+        "Temp1Read": 28.991,
+        "HumRead": 24.605,
+        "CO2Read": null,
+        "O2Read": null,
+        "FanRead": null
+      },
+      "setpoints": {
+        "TempSet": 29,
+        "HumSet": 0,
+        "CO2Set": null,
+        "O2Set": null,
+        "FanSet": null
+      },
+      "incubatorReadings": {}
+    }
+  ]
 }
