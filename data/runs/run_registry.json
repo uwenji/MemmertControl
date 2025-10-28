@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "lastUpdated": "2025-10-28T12:59:17.302Z",
+  "lastUpdated": "2025-10-28T13:04:17.675Z",
   "totalRuns": 9,
   "runs": [
     {
@@ -146,10 +146,16 @@
       "date": "2025-10-28",
       "startTime": "2025-10-28T12:59:14.050Z",
       "startedAt": "2025-10-28T12:59:14.050Z",
-      "status": "running",
+      "status": "completed",
       "dataPath": "data/runs/run_009_baseline_test/",
       "tags": [],
-      "quality": "pending"
+      "quality": "pending",
+      "duration_min": 5,
+      "endTime": "2025-10-28T13:04:15.958Z",
+      "duration": {
+        "totalMinutes": 5,
+        "formatted": "0h 5m"
+      }
     }
   ]
 }
