@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
-Memmert Control Daemon - Fully Autonomous
-Handles all git conflicts automatically, no manual intervention needed.
+Memmert Control Daemon
+Combines logger + watcher + auto-sync in one continuous process.
+No crontab needed!
 """
 import json
 import logging
@@ -9,7 +10,6 @@ import sys
 import os
 import time
 import subprocess
-import shutil
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Dict, Any, Optional
@@ -20,7 +20,7 @@ from atmoweb import AtmoWebClient
 
 
 class MemmertDaemon:
-    """Fully autonomous daemon with smart git conflict resolution."""
+    """All-in-one daemon for Memmert control and monitoring."""
     
     def __init__(
         self,
@@ -28,8 +28,8 @@ class MemmertDaemon:
         log_file: Path = Path("data/log/incubator_history.json"),
         schedule_file: Path = Path("data/schedules/setpoint_schedule.json"),
         max_hours: float = 3.0,
-        log_interval: int = 60,
-        sync_interval: int = 10,
+        log_interval: int = 60,  # seconds
+        sync_interval: int = 10,  # seconds
         git_repo_path: Optional[Path] = None
     ):
         self.incubator_ip = incubator_ip
@@ -39,21 +39,28 @@ class MemmertDaemon:
         self.log_interval = log_interval
         self.sync_interval = sync_interval
         
+        # Git repo path
         if git_repo_path:
             self.git_repo_path = git_repo_path
         else:
             self.git_repo_path = log_file.parent.parent.parent
         
+        # Tracking files
         self.schedule_tracker = Path("data/.schedule_last_modified")
+        
+        # Last run times
         self.last_log_time = 0
         self.last_sync_time = 0
         
+        # Setup
         self.logger = logging.getLogger(__name__)
         self._setup_git_ssh()
+        
+        # Create client
         self.client = AtmoWebClient(ip=incubator_ip)
     
     def _setup_git_ssh(self):
-        """Setup SSH for git."""
+        """Setup SSH configuration for git to work in background."""
         ssh_key = None
         home = Path.home()
         
@@ -65,184 +72,184 @@ class MemmertDaemon:
         
         if ssh_key:
             os.environ['GIT_SSH_COMMAND'] = f'ssh -i {ssh_key} -o IdentitiesOnly=yes -o StrictHostKeyChecking=no'
-    
-    def _git_run(self, cmd: list, timeout: int = 30) -> subprocess.CompletedProcess:
-        """Run git command in repo directory."""
-        original_dir = Path.cwd()
-        try:
-            os.chdir(self.git_repo_path)
-            return subprocess.run(cmd, capture_output=True, text=True, timeout=timeout)
-        finally:
-            os.chdir(original_dir)
-    
-    def _backup_log_file(self):
-        """Backup log file before risky operations."""
-        if self.log_file.exists():
-            backup = self.log_file.parent / f"{self.log_file.name}.backup"
-            shutil.copy2(self.log_file, backup)
-    
-    def _restore_log_file(self):
-        """Restore log file from backup if needed."""
-        backup = self.log_file.parent / f"{self.log_file.name}.backup"
-        if backup.exists() and not self.log_file.exists():
-            shutil.copy2(backup, self.log_file)
-    
-    def git_reset_to_clean_state(self) -> bool:
-        """Nuclear option: reset to clean state while preserving log file."""
-        try:
-            self.logger.info("⚠️  Resetting git to clean state...")
-            
-            # Backup log file
-            self._backup_log_file()
-            
-            # Reset hard to HEAD
-            self._git_run(['git', 'reset', '--hard', 'HEAD'])
-            
-            # Clean untracked files (except data/log/)
-            self._git_run(['git', 'clean', '-fd', '-e', 'data/log/'])
-            
-            # Restore log file
-            self._restore_log_file()
-            
-            self.logger.info("✓ Git reset complete")
-            return True
-            
-        except Exception as e:
-            self.logger.error(f"Git reset failed: {e}")
-            return False
+            self.logger.debug(f"Using SSH key: {ssh_key}")
     
     def git_pull(self) -> bool:
-        """Pull with automatic conflict resolution."""
+        """Pull latest changes from GitHub."""
         try:
-            # Strategy 1: Try normal pull with stash
-            status = self._git_run(['git', 'status', '--porcelain'])
-            has_changes = bool(status.stdout.strip())
+            original_dir = Path.cwd()
+            os.chdir(self.git_repo_path)
             
-            if has_changes:
-                # Backup log file first
-                self._backup_log_file()
+            try:
+                # Check if there are unstaged changes
+                status_result = subprocess.run(
+                    ['git', 'status', '--porcelain'],
+                    capture_output=True,
+                    text=True,
+                    timeout=10
+                )
                 
-                # Stash changes
-                self._git_run(['git', 'add', '-A'])
-                self._git_run(['git', 'stash'])
-            
-            # Try pull
-            result = self._git_run(['git', 'pull', '--rebase'])
-            
-            if result.returncode == 0:
-                # Success! Pop stash if needed
+                has_changes = bool(status_result.stdout.strip())
+                
+                # Stash if needed
                 if has_changes:
-                    pop_result = self._git_run(['git', 'stash', 'pop'])
-                    if pop_result.returncode != 0:
-                        # Conflict in stash pop, keep stash
-                        self.logger.warning("Stash pop conflict, keeping stashed changes")
+                    subprocess.run(['git', 'stash'], capture_output=True, timeout=10)
                 
-                if "Already up to date" not in result.stdout:
-                    self.logger.info("↓ Pulled updates")
+                # Pull
+                result = subprocess.run(
+                    ['git', 'pull', '--rebase'],
+                    capture_output=True,
+                    text=True,
+                    timeout=30
+                )
                 
-                self._restore_log_file()
-                return True
-            
-            # Strategy 2: Pull failed, try reset and pull
-            self.logger.warning("Pull failed, trying reset...")
-            self.git_reset_to_clean_state()
-            
-            result = self._git_run(['git', 'pull', '--rebase'])
-            if result.returncode == 0:
-                self.logger.info("↓ Pulled updates (after reset)")
-                self._restore_log_file()
-                return True
-            
-            # Strategy 3: Fetch and reset to remote
-            self.logger.warning("Pull still failed, syncing with remote...")
-            self._git_run(['git', 'fetch', 'origin'])
-            self._git_run(['git', 'reset', '--hard', 'origin/main'])
-            
-            self.logger.info("↓ Synced with remote (hard reset)")
-            self._restore_log_file()
-            return True
-            
+                # Pop stash if we stashed
+                if has_changes:
+                    subprocess.run(['git', 'stash', 'pop'], capture_output=True, timeout=10)
+                
+                if result.returncode == 0:
+                    if "Already up to date" not in result.stdout:
+                        self.logger.info("↓ Pulled updates from GitHub")
+                    return True
+                else:
+                    self.logger.warning(f"Git pull failed: {result.stderr}")
+                    return False
+                    
+            finally:
+                os.chdir(original_dir)
+                
         except Exception as e:
             self.logger.error(f"Git pull error: {e}")
-            self._restore_log_file()
             return False
     
     def git_push_with_retry(self, max_retries: int = 3, retry_delay: int = 5) -> bool:
-        """Push with retries and automatic conflict resolution."""
+        """
+        Push to GitHub with retry logic.
+        
+        Args:
+            max_retries: Number of retry attempts (default: 3)
+            retry_delay: Seconds between retries (default: 5)
+            
+        Returns:
+            True if successful, False otherwise
+        """
         try:
-            # Try push with retries
-            for attempt in range(max_retries):
-                result = self._git_run(['git', 'push'])
+            original_dir = Path.cwd()
+            os.chdir(self.git_repo_path)
+            
+            try:
+                # Try push with retries
+                for attempt in range(max_retries):
+                    result = subprocess.run(
+                        ['git', 'push'],
+                        capture_output=True,
+                        text=True,
+                        timeout=30
+                    )
+                    
+                    if result.returncode == 0:
+                        self.logger.info("↑ Pushed to GitHub")
+                        return True
+                    
+                    if attempt < max_retries - 1:
+                        self.logger.warning(f"Push failed (attempt {attempt + 1}/{max_retries}), retrying in {retry_delay}s...")
+                        time.sleep(retry_delay)
+                
+                # All retries failed, try pull + push
+                self.logger.info("All retries failed, trying rebase...")
+                
+                # Check for unstaged changes and stash if needed
+                status_result = subprocess.run(
+                    ['git', 'status', '--porcelain'],
+                    capture_output=True,
+                    text=True,
+                    timeout=10
+                )
+                has_changes = bool(status_result.stdout.strip())
+                if has_changes:
+                    subprocess.run(['git', 'stash'], capture_output=True, timeout=10)
+                
+                # Pull with rebase
+                subprocess.run(['git', 'pull', '--rebase'], capture_output=True, timeout=30)
+                
+                # Pop stash if we stashed
+                if has_changes:
+                    subprocess.run(['git', 'stash', 'pop'], capture_output=True, timeout=10)
+                
+                # Try push one more time
+                result = subprocess.run(
+                    ['git', 'push'],
+                    capture_output=True,
+                    text=True,
+                    timeout=30
+                )
                 
                 if result.returncode == 0:
-                    self.logger.info("↑ Pushed")
+                    self.logger.info("↑ Pushed to GitHub (after rebase)")
                     return True
-                
-                if attempt < max_retries - 1:
-                    self.logger.warning(f"Push failed ({attempt + 1}/{max_retries}), retrying...")
-                    time.sleep(retry_delay)
-            
-            # All retries failed - pull and try again
-            self.logger.info("Retries failed, pulling and retrying...")
-            
-            # Backup log file
-            self._backup_log_file()
-            
-            # Pull (will auto-resolve conflicts)
-            self.git_pull()
-            
-            # Restore log file
-            self._restore_log_file()
-            
-            # Re-add and commit log file
-            log_rel = self.log_file.relative_to(self.git_repo_path)
-            self._git_run(['git', 'add', str(log_rel)])
-            
-            # Check if there's something to commit
-            status = self._git_run(['git', 'status', '--porcelain', str(log_rel)])
-            if status.stdout.strip():
-                commit_msg = f"Update log: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
-                self._git_run(['git', 'commit', '-m', commit_msg])
-            
-            # Try push one more time
-            result = self._git_run(['git', 'push'])
-            
-            if result.returncode == 0:
-                self.logger.info("↑ Pushed (after sync)")
-                return True
-            else:
-                self.logger.error("Push failed after sync, will retry next cycle")
-                return False
+                else:
+                    self.logger.error(f"Git push failed after rebase: {result.stderr}")
+                    return False
+                    
+            finally:
+                os.chdir(original_dir)
                 
         except Exception as e:
             self.logger.error(f"Git push error: {e}")
             return False
     
     def git_commit_and_push(self) -> bool:
-        """Commit log file and push."""
+        """Commit log file and push with retry logic."""
         try:
-            log_rel = self.log_file.relative_to(self.git_repo_path)
+            original_dir = Path.cwd()
+            os.chdir(self.git_repo_path)
             
-            # Add file
-            self._git_run(['git', 'add', str(log_rel)])
-            
-            # Check if changes exist
-            status = self._git_run(['git', 'status', '--porcelain', str(log_rel)])
-            
-            if not status.stdout.strip():
-                return True  # No changes
-            
-            # Commit
-            commit_msg = f"Update log: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
-            result = self._git_run(['git', 'commit', '-m', commit_msg])
-            
-            if result.returncode != 0:
-                self.logger.warning(f"Commit issue: {result.stderr}")
-                return False
-            
-            # Push with retry
-            return self.git_push_with_retry(max_retries=3, retry_delay=5)
-            
+            try:
+                # Get relative path
+                log_file_rel = self.log_file.relative_to(self.git_repo_path)
+                
+                # Add file
+                result = subprocess.run(
+                    ['git', 'add', str(log_file_rel)],
+                    capture_output=True,
+                    text=True,
+                    timeout=10
+                )
+                
+                if result.returncode != 0:
+                    self.logger.error(f"Git add failed: {result.stderr}")
+                    return False
+                
+                # Check if changes exist
+                status_result = subprocess.run(
+                    ['git', 'status', '--porcelain', str(log_file_rel)],
+                    capture_output=True,
+                    text=True,
+                    timeout=10
+                )
+                
+                if not status_result.stdout.strip():
+                    return True  # No changes
+                
+                # Commit
+                commit_msg = f"Update log: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
+                result = subprocess.run(
+                    ['git', 'commit', '-m', commit_msg],
+                    capture_output=True,
+                    text=True,
+                    timeout=10
+                )
+                
+                if result.returncode != 0:
+                    self.logger.error(f"Git commit failed: {result.stderr}")
+                    return False
+                
+                # Push with retry
+                return self.git_push_with_retry(max_retries=3, retry_delay=5)
+                
+            finally:
+                os.chdir(original_dir)
+                
         except Exception as e:
             self.logger.error(f"Git operation error: {e}")
             return False
@@ -268,14 +275,11 @@ class MemmertDaemon:
                 'setpoints': setpoints
             }
             
-            temp = readings.get('Temp1Read', 'N/A')
-            hum = readings.get('HumRead', 'N/A')
-            self.logger.info(f"📊 Temp={temp}°C, Hum={hum}%")
-            
+            self.logger.info(f"📊 Temp={readings.get('Temp1Read', 'N/A')}°C, Hum={readings.get('HumRead', 'N/A')}%")
             return entry
             
         except Exception as e:
-            self.logger.error(f"Read failed: {e}")
+            self.logger.error(f"Failed to read incubator: {e}")
             return {
                 'timestamp': timestamp,
                 'error': str(e),
@@ -290,7 +294,8 @@ class MemmertDaemon:
                 'metadata': {
                     'created': datetime.now().isoformat(),
                     'device_ip': self.incubator_ip,
-                    'max_hours': self.max_hours
+                    'max_hours': self.max_hours,
+                    'description': 'Rolling history of Memmert incubator data'
                 },
                 'data': []
             }
@@ -326,7 +331,7 @@ class MemmertDaemon:
         
         removed = len(data) - len(trimmed_data)
         if removed > 0:
-            self.logger.info(f"🗑️  Trimmed {removed} entries")
+            self.logger.info(f"🗑️  Trimmed {removed} old entries")
         
         return trimmed_data
     
@@ -355,20 +360,22 @@ class MemmertDaemon:
             history['data'] = self.trim_old_data(history['data'])
             self.save_history(history)
             
+            # Commit and push
             self.git_commit_and_push()
             
             self.last_log_time = time.time()
             
         except Exception as e:
-            self.logger.error(f"Logging failed: {e}")
+            self.logger.error(f"Logging failed: {e}", exc_info=True)
     
     def check_schedule_update(self):
-        """Check if schedule file changed."""
+        """Check if schedule file changed and run scheduler if needed."""
         if not self.schedule_file.exists():
             return
         
         current_mtime = os.path.getmtime(self.schedule_file)
         
+        # Load last known time
         last_mtime = None
         if self.schedule_tracker.exists():
             try:
@@ -377,6 +384,7 @@ class MemmertDaemon:
             except:
                 pass
         
+        # Check if changed
         if last_mtime is None or current_mtime > last_mtime:
             self.logger.info("📅 Schedule updated! Running scheduler...")
             
@@ -394,17 +402,18 @@ class MemmertDaemon:
                 if result.returncode == 0:
                     self.logger.info("✓ Scheduler executed")
                 else:
-                    self.logger.error(f"Scheduler failed")
+                    self.logger.error(f"Scheduler failed: {result.stderr}")
                     
             except Exception as e:
                 self.logger.error(f"Scheduler error: {e}")
             
+            # Save new modification time
             self.schedule_tracker.parent.mkdir(parents=True, exist_ok=True)
             with open(self.schedule_tracker, 'w') as f:
                 f.write(str(current_mtime))
     
     def sync_check(self):
-        """Periodic sync check."""
+        """Check for GitHub updates every sync_interval."""
         current_time = time.time()
         
         if current_time - self.last_sync_time >= self.sync_interval:
@@ -414,19 +423,24 @@ class MemmertDaemon:
     
     def run(self):
         """Main daemon loop."""
-        self.logger.info("🚀 Memmert Daemon started (Autonomous Mode)")
-        self.logger.info(f"   Log: {self.log_interval}s | Sync: {self.sync_interval}s")
+        self.logger.info("🚀 Memmert Daemon started")
+        self.logger.info(f"   Log interval: {self.log_interval}s")
+        self.logger.info(f"   Sync interval: {self.sync_interval}s")
+        self.logger.info(f"   Incubator: {self.incubator_ip}")
         self.logger.info("")
         
         try:
             while True:
                 current_time = time.time()
                 
+                # Log data every log_interval
                 if current_time - self.last_log_time >= self.log_interval:
                     self.log_data()
                 
+                # Sync check every sync_interval
                 self.sync_check()
                 
+                # Sleep for 1 second to avoid busy loop
                 time.sleep(1)
                 
         except KeyboardInterrupt:
@@ -440,14 +454,15 @@ def main():
     import argparse
     
     parser = argparse.ArgumentParser(description='Memmert Control Daemon')
-    parser.add_argument('--ip', default='192.168.100.100')
-    parser.add_argument('--log-interval', type=int, default=60)
-    parser.add_argument('--sync-interval', type=int, default=10)
-    parser.add_argument('--max-hours', type=float, default=3.0)
-    parser.add_argument('--verbose', action='store_true')
+    parser.add_argument('--ip', default='192.168.100.100', help='Incubator IP')
+    parser.add_argument('--log-interval', type=int, default=60, help='Logging interval (seconds)')
+    parser.add_argument('--sync-interval', type=int, default=10, help='GitHub sync interval (seconds)')
+    parser.add_argument('--max-hours', type=float, default=3.0, help='Max hours of data to keep')
+    parser.add_argument('--verbose', action='store_true', help='Verbose logging')
     
     args = parser.parse_args()
     
+    # Setup logging
     level = logging.DEBUG if args.verbose else logging.INFO
     logging.basicConfig(
         level=level,
@@ -455,6 +470,7 @@ def main():
         datefmt='%H:%M:%S'
     )
     
+    # Create and run daemon
     daemon = MemmertDaemon(
         incubator_ip=args.ip,
         log_interval=args.log_interval,
