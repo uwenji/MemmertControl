@@ -1,1 +1,97 @@
-"# Run Report: run_001_baseline_test\n\n**Status:** 🔄 RUNNING  \n**Date:** 27.10.2025  \n**Duration:** 0 minutes  \n**Type:** baseline\n\n---\n\n## Executive Summary\n\n**Run Name:** baseline_test  \n**Description:** undefined\n\n**Key Findings:**\n- **Data Quality:** No data (0% complete)\n- **Total Readings:** 0\n- **PID Actions:** 1\n- **Disturbances:** 0\n\n---\n\n## Test Configuration\n\n### Targets\n| Variable | Target | Unit |\n|----------|--------|------|\n| Temp | 30 | °C |\n| Hum | 60 | % |\n| CO2 | 1000 |  ppm |\n| O2 | 21 | % |\n| Fan | 50 | % |\n\n### Bioreactor State\n- **Empty:** Yes\n- **Contents:** Ambient air\n- **Approximate mass:** 0.5 kg\n\n### PID Parameters\n| Variable | Kp | Ki | Kd |\n|----------|----|----|-----|\n| Temp | 2 | 0.1 | 0.5 |\n| Hum | 1.5 | 0.05 | 0.3 |\n| CO2 | 0.5 | 0.02 | 0.1 |\n| O2 | 1 | 0.05 | 0.2 |\n| Fan | 1 | 0.1 | 0.05 |\n\n---\n\n## Timeline\n\nNo manual events recorded.\n\n---\n\n## Performance Metrics\n\n---\n\n## Disturbance Analysis\n\nNo disturbances detected or analyzed.\n\n---\n\n## Data Quality\n\n**Completeness:** 0% (No data)\n- Expected readings: undefined\n- Actual readings: undefined\n- Missed readings: 0\n\n**Sensor Status:**\nAll sensors operational\n\n---\n\n## Conclusions and Recommendations\n\n### Performance Assessment\n\n### Overall Recommendation\n⚠️ **Further tuning recommended.** Review performance metrics and adjust PID parameters as suggested above.\n\n---\n\n## Raw Data\n\n**Run directory:** `run_001_baseline_test/`\n\n**Files:**\n- [run_metadata.json](run_metadata.json) - Run configuration and metadata\n- [sensor_readings.json](sensor_readings.json) - All sensor data (0 readings)\n- [pid_actions.json](pid_actions.json) - PID control actions (1 actions)\n- [manual_events.json](manual_events.json) - Operator-logged events (0 events)\n\n**For detailed analysis:** Load these files into your preferred data analysis tool (Python, R, MATLAB, etc.)"
+# Run Report: run_001_baseline_test
+
+**Status:** 🔄 RUNNING  
+**Date:** 27.10.2025  
+**Duration:** 0 minutes  
+**Type:** baseline
+
+---
+
+## Executive Summary
+
+**Run Name:** baseline_test  
+**Description:** undefined
+
+**Key Findings:**
+- **Data Quality:** No data (0% complete)
+- **Total Readings:** 0
+- **PID Actions:** 1
+- **Disturbances:** 0
+
+---
+
+## Test Configuration
+
+### Targets
+| Variable | Target | Unit |
+|----------|--------|------|
+| Temp | 30 | °C |
+| Hum | 60 | % |
+| CO2 | 1000 |  ppm |
+| O2 | 21 | % |
+| Fan | 50 | % |
+
+### Bioreactor State
+- **Empty:** Yes
+- **Contents:** Ambient air
+- **Approximate mass:** 0.5 kg
+
+### PID Parameters
+| Variable | Kp | Ki | Kd |
+|----------|----|----|-----|
+| Temp | 2 | 0.1 | 0.5 |
+| Hum | 1.5 | 0.05 | 0.3 |
+| CO2 | 0.5 | 0.02 | 0.1 |
+| O2 | 1 | 0.05 | 0.2 |
+| Fan | 1 | 0.1 | 0.05 |
+
+---
+
+## Timeline
+
+No manual events recorded.
+
+---
+
+## Performance Metrics
+
+---
+
+## Disturbance Analysis
+
+No disturbances detected or analyzed.
+
+---
+
+## Data Quality
+
+**Completeness:** 0% (No data)
+- Expected readings: undefined
+- Actual readings: undefined
+- Missed readings: 0
+
+**Sensor Status:**
+All sensors operational
+
+---
+
+## Conclusions and Recommendations
+
+### Performance Assessment
+
+### Overall Recommendation
+⚠️ **Further tuning recommended.** Review performance metrics and adjust PID parameters as suggested above.
+
+---
+
+## Raw Data
+
+**Run directory:** `run_001_baseline_test/`
+
+**Files:**
+- [run_metadata.json](run_metadata.json) - Run configuration and metadata
+- [sensor_readings.json](sensor_readings.json) - All sensor data (0 readings)
+- [pid_actions.json](pid_actions.json) - PID control actions (1 actions)
+- [manual_events.json](manual_events.json) - Operator-logged events (0 events)
+
+**For detailed analysis:** Load these files into your preferred data analysis tool (Python, R, MATLAB, etc.)
