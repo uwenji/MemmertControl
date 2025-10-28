@@ -81,12 +81,31 @@ class MemmertDaemon:
             os.chdir(self.git_repo_path)
             
             try:
+                # Check if there are unstaged changes
+                status_result = subprocess.run(
+                    ['git', 'status', '--porcelain'],
+                    capture_output=True,
+                    text=True,
+                    timeout=10
+                )
+                
+                has_changes = bool(status_result.stdout.strip())
+                
+                # Stash if needed
+                if has_changes:
+                    subprocess.run(['git', 'stash'], capture_output=True, timeout=10)
+                
+                # Pull
                 result = subprocess.run(
                     ['git', 'pull', '--rebase'],
                     capture_output=True,
                     text=True,
                     timeout=30
                 )
+                
+                # Pop stash if we stashed
+                if has_changes:
+                    subprocess.run(['git', 'stash', 'pop'], capture_output=True, timeout=10)
                 
                 if result.returncode == 0:
                     if "Already up to date" not in result.stdout:
@@ -139,8 +158,23 @@ class MemmertDaemon:
                 # All retries failed, try pull + push
                 self.logger.info("All retries failed, trying rebase...")
                 
+                # Check for unstaged changes and stash if needed
+                status_result = subprocess.run(
+                    ['git', 'status', '--porcelain'],
+                    capture_output=True,
+                    text=True,
+                    timeout=10
+                )
+                has_changes = bool(status_result.stdout.strip())
+                if has_changes:
+                    subprocess.run(['git', 'stash'], capture_output=True, timeout=10)
+                
                 # Pull with rebase
                 subprocess.run(['git', 'pull', '--rebase'], capture_output=True, timeout=30)
+                
+                # Pop stash if we stashed
+                if has_changes:
+                    subprocess.run(['git', 'stash', 'pop'], capture_output=True, timeout=10)
                 
                 # Try push one more time
                 result = subprocess.run(
