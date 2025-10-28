@@ -2,10 +2,10 @@
   "runId": "run_014_baseline_test",
   "runName": "baseline_test",
   "runType": "baseline",
-  "status": "running",
+  "status": "completed",
   "startTime": "2025-10-28T13:49:27.555Z",
-  "endTime": null,
-  "durationMinutes": null,
+  "endTime": "2025-10-28T13:56:32.525Z",
+  "durationMinutes": 7,
   "bioreactorState": {
     "empty": true,
     "contents": null,
@@ -47,7 +47,29 @@
     }
   },
   "plannedDisturbances": [],
-  "actualEvents": [],
+  "actualEvents": [
+    {
+      "timestamp": "2025-10-28T13:56:17.782Z",
+      "elapsed_sec": 407,
+      "type": "custom",
+      "category": "general",
+      "details": {},
+      "recordedBy": "operator",
+      "notes": ""
+    },
+    {
+      "timestamp": "2025-10-28T13:56:32.525Z",
+      "elapsed_sec": 422,
+      "type": "system",
+      "category": "run_stop",
+      "details": {
+        "reason": "test complete",
+        "duration_min": 7
+      },
+      "recordedBy": "system",
+      "notes": ""
+    }
+  ],
   "endConditions": {
     "type": "manual",
     "criteria": "Manual stop by operator"
