@@ -1,18 +1,13 @@
 {
   "metadata": {
-    "generated": "2025-10-28T09:38:12.922Z",
-    "generatedBy": "DataVisualizationModal",
+    "generated": "2025-10-28T09:45:59.636Z",
+    "generatedBy": "ControlLoop",
     "version": "1.0",
-    "description": "Future setpoint schedule",
-    "overridePID": false
-  },
-  "configuration": {
-    "categories": [
-      "Temperature",
-      "Humidity"
-    ],
-    "timeZone": "Europe/Berlin",
-    "futureHours": 24
+    "description": "Accumulated PID-generated setpoint schedule",
+    "overridePID": false,
+    "pidActive": true,
+    "iterationCount": 1,
+    "totalSchedulePoints": 2
   },
   "schedule": [
     {
@@ -25,21 +20,93 @@
         "TempTarget": 29,
         "HumTarget": 0
       }
+    },
+    {
+      "timestamp": "2025-10-28T09:45:59.430Z",
+      "targets": {
+        "TempTarget": 25,
+        "HumTarget": 50,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 10,
+        "HumSet": 38.9
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-28T09:45:59.430Z"
     }
   ],
-  "statistics": {
-    "totalPoints": 1,
-    "timeSpan": "0 hours",
-    "variableRanges": {
-      "TempSet": {
-        "min": 29,
-        "max": 29,
-        "average": 29
-      },
-      "HumSet": {
+  "pidState": {
+    "Temp": {
+      "integral": -5,
+      "previousError": -4.004000000000001,
+      "previousTime": 1761644759430,
+      "iterationCount": 1,
+      "parameters": {
+        "Kp": 2,
+        "Ki": 0.1,
+        "Kd": 0.5,
+        "min": 10,
+        "max": 40,
+        "integralMax": 5
+      }
+    },
+    "Hum": {
+      "integral": 10,
+      "previousError": 25.497,
+      "previousTime": 1761644759430,
+      "iterationCount": 1,
+      "parameters": {
+        "Kp": 1.5,
+        "Ki": 0.05,
+        "Kd": 0.3,
+        "min": 20,
+        "max": 95,
+        "integralMax": 10
+      }
+    },
+    "CO2": {
+      "integral": 0,
+      "previousError": 0,
+      "previousTime": null,
+      "iterationCount": 0,
+      "parameters": {
+        "Kp": 0.5,
+        "Ki": 0.02,
+        "Kd": 0.1,
         "min": 0,
-        "max": 0,
-        "average": 0
+        "max": 2000,
+        "integralMax": 100
+      }
+    },
+    "O2": {
+      "integral": 0,
+      "previousError": 0,
+      "previousTime": null,
+      "iterationCount": 0,
+      "parameters": {
+        "Kp": 1,
+        "Ki": 0.05,
+        "Kd": 0.2,
+        "min": 10,
+        "max": 30,
+        "integralMax": 2
+      }
+    },
+    "Fan": {
+      "integral": 0,
+      "previousError": 0,
+      "previousTime": null,
+      "iterationCount": 0,
+      "parameters": {
+        "Kp": 1,
+        "Ki": 0.1,
+        "Kd": 0.05,
+        "min": 0,
+        "max": 100,
+        "integralMax": 20
       }
     }
   }
