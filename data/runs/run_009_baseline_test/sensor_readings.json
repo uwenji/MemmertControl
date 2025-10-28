@@ -1,0 +1,15 @@
+{
+  "runId": "run_009_baseline_test",
+  "sampleInterval_sec": 1,
+  "totalSamples": 0,
+  "startTime": "2025-10-28T12:59:14.050Z",
+  "variables": [
+    "Temp1Read",
+    "HumRead",
+    "CO2Read",
+    "TempSet",
+    "HumSet",
+    "CO2Set"
+  ],
+  "data": []
+}
