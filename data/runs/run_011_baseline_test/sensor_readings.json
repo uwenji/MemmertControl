@@ -13,11 +13,11 @@
   ],
   "data": [
     {
-      "timestamp": "2025-10-28T14:20:50.187465",
-      "elapsed_sec": 242,
+      "timestamp": "2025-10-28T14:22:35.670807",
+      "elapsed_sec": 347,
       "readings": {
-        "Temp1Read": 28.986,
-        "HumRead": 24.63,
+        "Temp1Read": 28.977,
+        "HumRead": 24.605,
         "CO2Read": null,
         "O2Read": null,
         "FanRead": null
