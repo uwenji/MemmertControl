@@ -1,0 +1,16 @@
+[Unit]
+Description=Memmert Incubator Control Daemon
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/Desktop/MemmertControl
+ExecStart=/usr/bin/python3 /home/pi/Desktop/MemmertControl/memmert_daemon.py
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
