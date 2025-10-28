@@ -1,8 +1,8 @@
 {
   "runId": "run_007_baseline_test",
   "sampleInterval_sec": 1,
-  "totalSamples": 0,
-  "startTime": "2025-10-28T10:53:13.030Z",
+  "totalSamples": 6,
+  "startTime": "2025-10-28T10:53:16.440Z",
   "variables": [
     "Temp1Read",
     "HumRead",
@@ -11,5 +11,120 @@
     "HumSet",
     "CO2Set"
   ],
-  "data": []
+  "data": [
+    {
+      "timestamp": "2025-10-28T11:54:02.360308",
+      "elapsed_sec": 46,
+      "readings": {
+        "Temp1Read": 28.95,
+        "HumRead": 24.69,
+        "CO2Read": null,
+        "O2Read": null,
+        "FanRead": null
+      },
+      "setpoints": {
+        "TempSet": 29,
+        "HumSet": 0,
+        "CO2Set": null,
+        "O2Set": null,
+        "FanSet": null
+      },
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-28T11:54:32.403833",
+      "elapsed_sec": 76,
+      "readings": {
+        "Temp1Read": 28.96,
+        "HumRead": 24.728,
+        "CO2Read": null,
+        "O2Read": null,
+        "FanRead": null
+      },
+      "setpoints": {
+        "TempSet": 29,
+        "HumSet": 0,
+        "CO2Set": null,
+        "O2Set": null,
+        "FanSet": null
+      },
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-28T11:56:09.748894",
+      "elapsed_sec": 173,
+      "readings": {
+        "Temp1Read": 28.949,
+        "HumRead": 24.69,
+        "CO2Read": null,
+        "O2Read": null,
+        "FanRead": null
+      },
+      "setpoints": {
+        "TempSet": 29,
+        "HumSet": 0,
+        "CO2Set": null,
+        "O2Set": null,
+        "FanSet": null
+      },
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-28T11:59:11.984939",
+      "elapsed_sec": 356,
+      "readings": {
+        "Temp1Read": 28.965,
+        "HumRead": 24.638,
+        "CO2Read": null,
+        "O2Read": null,
+        "FanRead": null
+      },
+      "setpoints": {
+        "TempSet": 29,
+        "HumSet": 0,
+        "CO2Set": null,
+        "O2Set": null,
+        "FanSet": null
+      },
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-28T12:00:49.497477",
+      "elapsed_sec": 453,
+      "readings": {
+        "Temp1Read": 28.975,
+        "HumRead": 24.677,
+        "CO2Read": null,
+        "O2Read": null,
+        "FanRead": null
+      },
+      "setpoints": {
+        "TempSet": 29,
+        "HumSet": 0,
+        "CO2Set": null,
+        "O2Set": null,
+        "FanSet": null
+      },
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-28T12:05:23.468262",
+      "elapsed_sec": 727,
+      "readings": {
+        "Temp1Read": 28.977,
+        "HumRead": 24.651,
+        "CO2Read": null,
+        "O2Read": null,
+        "FanRead": null
+      },
+      "setpoints": {
+        "TempSet": 29,
+        "HumSet": 0,
+        "CO2Set": null,
+        "O2Set": null,
+        "FanSet": null
+      },
+      "incubatorReadings": {}
+    }
+  ]
 }
