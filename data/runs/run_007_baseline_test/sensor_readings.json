@@ -1,7 +1,7 @@
 {
   "runId": "run_007_baseline_test",
   "sampleInterval_sec": 1,
-  "totalSamples": 5,
+  "totalSamples": 1,
   "startTime": "2025-10-28T10:53:16.440Z",
   "variables": [
     "Temp1Read",
@@ -13,87 +13,11 @@
   ],
   "data": [
     {
-      "timestamp": "2025-10-28T12:06:31.613626",
-      "elapsed_sec": 795,
+      "timestamp": "2025-10-28T12:14:47.025526",
+      "elapsed_sec": 1291,
       "readings": {
-        "Temp1Read": 28.989,
-        "HumRead": 24.651,
-        "CO2Read": null,
-        "O2Read": null,
-        "FanRead": null
-      },
-      "setpoints": {
-        "TempSet": 29,
-        "HumSet": 0,
-        "CO2Set": null,
-        "O2Set": null,
-        "FanSet": null
-      },
-      "incubatorReadings": {}
-    },
-    {
-      "timestamp": "2025-10-28T12:08:09.193933",
-      "elapsed_sec": 893,
-      "readings": {
-        "Temp1Read": 28.995,
-        "HumRead": 24.613,
-        "CO2Read": null,
-        "O2Read": null,
-        "FanRead": null
-      },
-      "setpoints": {
-        "TempSet": 29,
-        "HumSet": 0,
-        "CO2Set": null,
-        "O2Set": null,
-        "FanSet": null
-      },
-      "incubatorReadings": {}
-    },
-    {
-      "timestamp": "2025-10-28T12:09:46.722882",
-      "elapsed_sec": 990,
-      "readings": {
-        "Temp1Read": 28.998,
-        "HumRead": 24.651,
-        "CO2Read": null,
-        "O2Read": null,
-        "FanRead": null
-      },
-      "setpoints": {
-        "TempSet": 29,
-        "HumSet": 0,
-        "CO2Set": null,
-        "O2Set": null,
-        "FanSet": null
-      },
-      "incubatorReadings": {}
-    },
-    {
-      "timestamp": "2025-10-28T12:11:24.363878",
-      "elapsed_sec": 1088,
-      "readings": {
-        "Temp1Read": 28.991,
-        "HumRead": 24.69,
-        "CO2Read": null,
-        "O2Read": null,
-        "FanRead": null
-      },
-      "setpoints": {
-        "TempSet": 29,
-        "HumSet": 0,
-        "CO2Set": null,
-        "O2Set": null,
-        "FanSet": null
-      },
-      "incubatorReadings": {}
-    },
-    {
-      "timestamp": "2025-10-28T12:13:01.935916",
-      "elapsed_sec": 1185,
-      "readings": {
-        "Temp1Read": 28.999,
-        "HumRead": 24.664,
+        "Temp1Read": 29.013,
+        "HumRead": 24.596,
         "CO2Read": null,
         "O2Read": null,
         "FanRead": null
