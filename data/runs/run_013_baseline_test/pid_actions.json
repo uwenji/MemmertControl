@@ -4,9 +4,9 @@
   "description": "PID control actions (one per poll interval)",
   "actions": [
     {
-      "timestamp": "2025-10-28T13:39:37.331Z",
-      "elapsed_sec": 13,
-      "iteration": 0,
+      "timestamp": "2025-10-28T13:40:39.067Z",
+      "elapsed_sec": 75,
+      "iteration": 1,
       "targets": {
         "TempTarget": 25,
         "HumTarget": 50,
@@ -66,7 +66,7 @@
         "HumSet": 38.6
       },
       "overridden": false,
-      "calculationTime_ms": 754
+      "calculationTime_ms": 584
     }
   ]
 }
