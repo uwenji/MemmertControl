@@ -1,8 +1,8 @@
 {
   "runId": "run_005_baseline_test",
   "sampleInterval_sec": 1,
-  "totalSamples": 0,
-  "startTime": "2025-10-28T10:40:06.180Z",
+  "totalSamples": 1,
+  "startTime": "2025-10-28T10:40:09.273Z",
   "variables": [
     "Temp1Read",
     "HumRead",
@@ -11,5 +11,25 @@
     "HumSet",
     "CO2Set"
   ],
-  "data": []
+  "data": [
+    {
+      "timestamp": "2025-10-28T11:41:02.254575",
+      "elapsed_sec": 53,
+      "readings": {
+        "Temp1Read": 28.963,
+        "HumRead": 24.647,
+        "CO2Read": null,
+        "O2Read": null,
+        "FanRead": null
+      },
+      "setpoints": {
+        "TempSet": 29,
+        "HumSet": 0,
+        "CO2Set": null,
+        "O2Set": null,
+        "FanSet": null
+      },
+      "incubatorReadings": {}
+    }
+  ]
 }
