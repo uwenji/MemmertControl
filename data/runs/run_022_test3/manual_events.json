@@ -2,12 +2,15 @@
   "runId": "run_022_test3",
   "events": [
     {
-      "timestamp": "2025-10-29T15:05:14.167Z",
-      "elapsed_sec": 2544,
-      "type": "custom",
-      "category": "general",
-      "details": {},
-      "recordedBy": "operator",
+      "timestamp": "2025-10-29T15:23:27.012Z",
+      "elapsed_sec": 3637,
+      "type": "system",
+      "category": "run_stop",
+      "details": {
+        "reason": "test complete",
+        "duration_min": 61
+      },
+      "recordedBy": "system",
       "notes": ""
     }
   ]
