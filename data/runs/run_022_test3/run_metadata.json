@@ -2,10 +2,10 @@
   "runId": "run_022_test3",
   "runName": "test3",
   "runType": "baseline",
-  "status": "running",
+  "status": "completed",
   "startTime": "2025-10-29T14:22:46.834Z",
-  "endTime": null,
-  "durationMinutes": null,
+  "endTime": "2025-10-29T15:23:27.012Z",
+  "durationMinutes": 61,
   "bioreactorState": {
     "empty": true,
     "contents": null,
@@ -47,7 +47,47 @@
     }
   },
   "plannedDisturbances": [],
-  "actualEvents": [],
+  "actualEvents": [
+    {
+      "timestamp": "2025-10-29T14:33:31.373Z",
+      "elapsed_sec": 641,
+      "type": "custom",
+      "category": "general",
+      "details": {},
+      "recordedBy": "operator",
+      "notes": ""
+    },
+    {
+      "timestamp": "2025-10-29T14:47:40.049Z",
+      "elapsed_sec": 1490,
+      "type": "custom",
+      "category": "general",
+      "details": {},
+      "recordedBy": "operator",
+      "notes": ""
+    },
+    {
+      "timestamp": "2025-10-29T15:05:14.167Z",
+      "elapsed_sec": 2544,
+      "type": "custom",
+      "category": "general",
+      "details": {},
+      "recordedBy": "operator",
+      "notes": ""
+    },
+    {
+      "timestamp": "2025-10-29T15:23:27.012Z",
+      "elapsed_sec": 3637,
+      "type": "system",
+      "category": "run_stop",
+      "details": {
+        "reason": "test complete",
+        "duration_min": 61
+      },
+      "recordedBy": "system",
+      "notes": ""
+    }
+  ],
   "endConditions": {
     "type": "manual",
     "criteria": "Manual stop by operator"
