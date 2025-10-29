@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "description": "Target schedule for PID control",
+    "generatedBy": "ControlLoop",
+    "lastUpdated": "2025-10-29T10:02:11.053Z",
+    "totalPoints": 1
+  },
+  "schedule": [
+    {
+      "timestamp": "2025-10-29T10:02:11.053Z",
+      "targets": {
+        "TempTarget": 3,
+        "HumTarget": 50,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      }
+    }
+  ]
+}
