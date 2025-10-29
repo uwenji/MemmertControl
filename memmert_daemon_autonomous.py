@@ -362,8 +362,109 @@ class MemmertDaemon:
         except Exception as e:
             self.logger.error(f"Logging failed: {e}")
     
+    def load_and_apply_schedule(self) -> bool:
+        """Load schedule and apply the most recent setpoints to the incubator."""
+        try:
+            # Load the schedule file
+            with open(self.schedule_file, 'r') as f:
+                schedule_data = json.load(f)
+            
+            schedule_entries = schedule_data.get('schedule', [])
+            if not schedule_entries:
+                self.logger.warning("No schedule entries found")
+                return False
+            
+            # Get the most recent entry (last in the list)
+            latest_entry = schedule_entries[-1]
+            setpoints = latest_entry.get('setpoints', {})
+            
+            if not setpoints:
+                self.logger.warning("No setpoints in latest schedule entry")
+                return False
+            
+            self.logger.info(f"📅 Applying setpoints from schedule: {setpoints}")
+            
+            # Apply each setpoint to the incubator
+            applied = {}
+            errors = []
+            
+            # Temperature
+            if 'TempSet' in setpoints:
+                try:
+                    result = self.client.set_temperature(setpoints['TempSet'])
+                    applied['TempSet'] = result
+                    self.logger.info(f"   ✓ Temperature set to {result}°C")
+                except Exception as e:
+                    errors.append(f"TempSet: {e}")
+                    self.logger.error(f"   ✗ Temperature failed: {e}")
+            
+            # Humidity
+            if 'HumSet' in setpoints:
+                try:
+                    result = self.client.set_humidity(setpoints['HumSet'])
+                    applied['HumSet'] = result
+                    self.logger.info(f"   ✓ Humidity set to {result}%")
+                except Exception as e:
+                    errors.append(f"HumSet: {e}")
+                    self.logger.error(f"   ✗ Humidity failed: {e}")
+            
+            # CO2 (if present)
+            if 'CO2Set' in setpoints:
+                try:
+                    result = self.client.set_co2(setpoints['CO2Set'])
+                    applied['CO2Set'] = result
+                    self.logger.info(f"   ✓ CO2 set to {result}%")
+                except Exception as e:
+                    errors.append(f"CO2Set: {e}")
+                    self.logger.error(f"   ✗ CO2 failed: {e}")
+            
+            # O2 (if present)
+            if 'O2Set' in setpoints:
+                try:
+                    result = self.client.set_o2(setpoints['O2Set'])
+                    applied['O2Set'] = result
+                    self.logger.info(f"   ✓ O2 set to {result}%")
+                except Exception as e:
+                    errors.append(f"O2Set: {e}")
+                    self.logger.error(f"   ✗ O2 failed: {e}")
+            
+            # Fan (if present)
+            if 'FanSet' in setpoints:
+                try:
+                    result = self.client.set_fan(setpoints['FanSet'])
+                    applied['FanSet'] = result
+                    self.logger.info(f"   ✓ Fan set to {result}%")
+                except Exception as e:
+                    errors.append(f"FanSet: {e}")
+                    self.logger.error(f"   ✗ Fan failed: {e}")
+            
+            # Read back current status to verify
+            time.sleep(1)  # Brief delay to let device update
+            current_status = self.client.get_status()
+            
+            self.logger.info("📊 Current status after applying setpoints:")
+            self.logger.info(f"   Setpoints: {current_status['setpoints']}")
+            self.logger.info(f"   Readings: {current_status['readings']}")
+            
+            if errors:
+                self.logger.warning(f"⚠️  Applied with errors: {', '.join(errors)}")
+                return False
+            else:
+                self.logger.info("✓ All setpoints applied successfully")
+                return True
+                
+        except FileNotFoundError:
+            self.logger.error(f"Schedule file not found: {self.schedule_file}")
+            return False
+        except json.JSONDecodeError as e:
+            self.logger.error(f"Invalid JSON in schedule file: {e}")
+            return False
+        except Exception as e:
+            self.logger.error(f"Error applying schedule: {e}")
+            return False
+    
     def check_schedule_update(self):
-        """Check if schedule file changed."""
+        """Check if schedule file changed and apply setpoints."""
         if not self.schedule_file.exists():
             return
         
@@ -378,30 +479,18 @@ class MemmertDaemon:
                 pass
         
         if last_mtime is None or current_mtime > last_mtime:
-            self.logger.info("📅 Schedule updated! Running scheduler...")
+            self.logger.info("📅 Schedule updated! Applying setpoints...")
             
-            try:
-                result = subprocess.run(
-                    [sys.executable, 'memmert_scheduler.py',
-                     '--schedule', str(self.schedule_file),
-                     '--ip', self.incubator_ip,
-                     '--once'],
-                    capture_output=True,
-                    text=True,
-                    timeout=30
-                )
-                
-                if result.returncode == 0:
-                    self.logger.info("✓ Scheduler executed")
-                else:
-                    self.logger.error(f"Scheduler failed")
-                    
-            except Exception as e:
-                self.logger.error(f"Scheduler error: {e}")
+            # Apply the schedule directly
+            success = self.load_and_apply_schedule()
             
-            self.schedule_tracker.parent.mkdir(parents=True, exist_ok=True)
-            with open(self.schedule_tracker, 'w') as f:
-                f.write(str(current_mtime))
+            if success:
+                # Update tracker to mark as processed
+                self.schedule_tracker.parent.mkdir(parents=True, exist_ok=True)
+                with open(self.schedule_tracker, 'w') as f:
+                    f.write(str(current_mtime))
+            else:
+                self.logger.error("Failed to apply schedule, will retry next cycle")
     
     def sync_check(self):
         """Periodic sync check."""
