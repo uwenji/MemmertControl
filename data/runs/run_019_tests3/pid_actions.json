@@ -4,9 +4,9 @@
   "description": "PID control actions (one per poll interval)",
   "actions": [
     {
-      "timestamp": "2025-10-29T10:50:06.187Z",
-      "elapsed_sec": 127,
-      "iteration": 2,
+      "timestamp": "2025-10-29T10:51:06.400Z",
+      "elapsed_sec": 187,
+      "iteration": 3,
       "targets": {
         "TempTarget": 35,
         "HumTarget": 50,
@@ -15,28 +15,28 @@
         "FanTarget": 50
       },
       "readings": {
-        "Temp1Read": 28.999,
-        "HumRead": 24.064,
+        "Temp1Read": 28.994,
+        "HumRead": 24.052,
         "CO2Read": null,
         "O2Read": null,
         "FanRead": null
       },
       "errors": {
-        "Temp": 6.001000000000001,
-        "Hum": 25.936,
+        "Temp": 6.006,
+        "Hum": 25.948,
         "CO2": 0,
         "O2": 0,
         "Fan": 0
       },
       "pidTerms": {
         "Temp": {
-          "P": 12.002000000000002,
+          "P": 12.012,
           "I": 5,
           "D": 0,
           "output": 12.5
         },
         "Hum": {
-          "P": 38.903999999999996,
+          "P": 38.922,
           "I": 10,
           "D": 0,
           "output": 39.4
@@ -66,7 +66,7 @@
         "HumSet": 39.4
       },
       "overridden": false,
-      "calculationTime_ms": 468
+      "calculationTime_ms": 677
     }
   ]
 }
