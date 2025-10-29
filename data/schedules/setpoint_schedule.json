@@ -1,13 +1,13 @@
 {
   "metadata": {
-    "generated": "2025-10-29T15:28:40.492Z",
+    "generated": "2025-10-29T15:28:46.331Z",
     "generatedBy": "ControlLoop",
     "version": "1.0",
     "description": "Accumulated PID-generated setpoint schedule",
     "overridePID": false,
     "pidActive": true,
-    "iterationCount": 328,
-    "totalSchedulePoints": 670
+    "iterationCount": 329,
+    "totalSchedulePoints": 671
   },
   "schedule": [
     {
@@ -10724,35 +10724,53 @@
       },
       "pidCalculated": true,
       "calculatedAt": "2025-10-29T15:28:40.103Z"
+    },
+    {
+      "timestamp": "2025-10-29T15:28:45.719Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 26.6,
+        "HumSet": 56.8
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-29T15:28:45.720Z"
     }
   ],
   "pidState": {
     "Temp": {
-      "integral": -4.5125,
+      "integral": -4.286875,
       "previousError": -3.9669999999999987,
-      "previousTime": 1761751720103,
-      "iterationCount": 330,
+      "previousTime": 1761751725719,
+      "iterationCount": 331,
       "parameters": {
         "Kp": 0.8,
         "Ki": 0.05,
         "Kd": 0.2,
         "min": 10,
         "max": 40,
-        "integralMax": 5
+        "integralMax": 5,
+        "useAsymmetricGains": false
       }
     },
     "Hum": {
-      "integral": -9.025,
+      "integral": -8.57375,
       "previousError": -4.924999999999997,
-      "previousTime": 1761751720103,
-      "iterationCount": 330,
+      "previousTime": 1761751725719,
+      "iterationCount": 331,
       "parameters": {
         "Kp": 0.6,
         "Ki": 0.03,
         "Kd": 0.15,
         "min": 20,
         "max": 95,
-        "integralMax": 10
+        "integralMax": 10,
+        "useAsymmetricGains": false
       }
     },
     "CO2": {
@@ -10766,7 +10784,8 @@
         "Kd": 0.05,
         "min": 0,
         "max": 2000,
-        "integralMax": 100
+        "integralMax": 100,
+        "useAsymmetricGains": false
       }
     },
     "O2": {
@@ -10780,7 +10799,8 @@
         "Kd": 0.1,
         "min": 10,
         "max": 30,
-        "integralMax": 2
+        "integralMax": 2,
+        "useAsymmetricGains": false
       }
     },
     "Fan": {
@@ -10794,7 +10814,8 @@
         "Kd": 0.02,
         "min": 0,
         "max": 100,
-        "integralMax": 20
+        "integralMax": 20,
+        "useAsymmetricGains": false
       }
     }
   }
