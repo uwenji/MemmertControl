@@ -1,13 +1,13 @@
 {
   "metadata": {
-    "generated": "2025-10-29T15:29:17.526Z",
+    "generated": "2025-10-29T15:30:02.333Z",
     "generatedBy": "ControlLoop",
     "version": "1.0",
     "description": "Accumulated PID-generated setpoint schedule",
     "overridePID": false,
     "pidActive": true,
-    "iterationCount": 331,
-    "totalSchedulePoints": 673
+    "iterationCount": 332,
+    "totalSchedulePoints": 674
   },
   "schedule": [
     {
@@ -10772,37 +10772,55 @@
       },
       "pidCalculated": true,
       "calculatedAt": "2025-10-29T15:29:17.030Z"
+    },
+    {
+      "timestamp": "2025-10-29T15:30:01.811Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 23.7,
+        "HumSet": 53.7
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-29T15:30:01.811Z"
     }
   ],
   "pidState": {
     "Temp": {
-      "integral": -4.75,
-      "previousError": -3.9669999999999987,
-      "previousTime": 1761751757030,
-      "iterationCount": 333,
+      "integral": -5,
+      "previousError": -3.905999999999999,
+      "previousTime": 1761751801811,
+      "iterationCount": 334,
       "parameters": {
-        "Kp": 0.8,
-        "Ki": 0.05,
-        "Kd": 0.2,
+        "Kp": {
+          "up": 0.8,
+          "down": 1.5
+        },
         "min": 10,
         "max": 40,
         "integralMax": 5,
-        "useAsymmetricGains": false
+        "useAsymmetricGains": true
       }
     },
     "Hum": {
-      "integral": -9.5,
-      "previousError": -4.924999999999997,
-      "previousTime": 1761751757030,
-      "iterationCount": 333,
+      "integral": -10,
+      "previousError": -4.748999999999995,
+      "previousTime": 1761751801811,
+      "iterationCount": 334,
       "parameters": {
-        "Kp": 0.6,
-        "Ki": 0.03,
-        "Kd": 0.15,
+        "Kp": {
+          "up": 0.6,
+          "down": 1.2
+        },
         "min": 20,
         "max": 95,
         "integralMax": 10,
-        "useAsymmetricGains": false
+        "useAsymmetricGains": true
       }
     },
     "CO2": {
