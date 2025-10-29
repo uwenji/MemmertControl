@@ -1,13 +1,13 @@
 {
   "metadata": {
-    "generated": "2025-10-29T12:32:27.893Z",
+    "generated": "2025-10-29T12:33:23.864Z",
     "generatedBy": "ControlLoop",
     "version": "1.0",
     "description": "Accumulated PID-generated setpoint schedule",
     "overridePID": false,
     "pidActive": true,
-    "iterationCount": 169,
-    "totalSchedulePoints": 511
+    "iterationCount": 170,
+    "totalSchedulePoints": 512
   },
   "schedule": [
     {
@@ -8180,18 +8180,34 @@
       },
       "pidCalculated": true,
       "calculatedAt": "2025-10-29T12:32:27.504Z"
+    },
+    {
+      "timestamp": "2025-10-29T12:33:23.307Z",
+      "targets": {
+        "TempTarget": 35,
+        "HumTarget": 50,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 40,
+        "HumSet": 65.8
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-29T12:33:23.307Z"
     }
   ],
   "pidState": {
     "Temp": {
       "integral": 5,
       "previousError": 6.001999999999999,
-      "previousTime": 1761741147504,
-      "iterationCount": 171,
+      "previousTime": 1761741203307,
+      "iterationCount": 172,
       "parameters": {
-        "Kp": 2,
-        "Ki": 0.1,
-        "Kd": 0.5,
+        "Kp": 0.8,
+        "Ki": 0.05,
+        "Kd": 0.2,
         "min": 10,
         "max": 40,
         "integralMax": 5
@@ -8200,12 +8216,12 @@
     "Hum": {
       "integral": 10,
       "previousError": 25.844,
-      "previousTime": 1761741147504,
-      "iterationCount": 171,
+      "previousTime": 1761741203307,
+      "iterationCount": 172,
       "parameters": {
-        "Kp": 1.5,
-        "Ki": 0.05,
-        "Kd": 0.3,
+        "Kp": 0.6,
+        "Ki": 0.03,
+        "Kd": 0.15,
         "min": 20,
         "max": 95,
         "integralMax": 10
@@ -8217,9 +8233,9 @@
       "previousTime": null,
       "iterationCount": 0,
       "parameters": {
-        "Kp": 0.5,
-        "Ki": 0.02,
-        "Kd": 0.1,
+        "Kp": 0.3,
+        "Ki": 0.01,
+        "Kd": 0.05,
         "min": 0,
         "max": 2000,
         "integralMax": 100
@@ -8231,9 +8247,9 @@
       "previousTime": null,
       "iterationCount": 0,
       "parameters": {
-        "Kp": 1,
-        "Ki": 0.05,
-        "Kd": 0.2,
+        "Kp": 0.5,
+        "Ki": 0.02,
+        "Kd": 0.1,
         "min": 10,
         "max": 30,
         "integralMax": 2
@@ -8245,9 +8261,9 @@
       "previousTime": null,
       "iterationCount": 0,
       "parameters": {
-        "Kp": 1,
-        "Ki": 0.1,
-        "Kd": 0.05,
+        "Kp": 0.5,
+        "Ki": 0.05,
+        "Kd": 0.02,
         "min": 0,
         "max": 100,
         "integralMax": 20
