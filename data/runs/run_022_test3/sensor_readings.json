@@ -13,18 +13,18 @@
   ],
   "data": [
     {
-      "timestamp": "2025-10-29T16:10:02.978165",
-      "elapsed_sec": 2833,
+      "timestamp": "2025-10-29T16:11:48.075329",
+      "elapsed_sec": 2938,
       "readings": {
-        "Temp1Read": 34.679,
-        "HumRead": 68.914,
+        "Temp1Read": 34.615,
+        "HumRead": 68.485,
         "CO2Read": null,
         "O2Read": null,
         "FanRead": null
       },
       "setpoints": {
         "TempSet": 26,
-        "HumSet": 54.1,
+        "HumSet": 54.4,
         "CO2Set": null,
         "O2Set": null,
         "FanSet": null
