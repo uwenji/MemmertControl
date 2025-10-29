@@ -4,9 +4,9 @@
   "description": "PID control actions (one per poll interval)",
   "actions": [
     {
-      "timestamp": "2025-10-29T15:15:04.409Z",
-      "elapsed_sec": 3134,
-      "iteration": 52,
+      "timestamp": "2025-10-29T15:16:05.094Z",
+      "elapsed_sec": 3195,
+      "iteration": 53,
       "targets": {
         "TempTarget": 30,
         "HumTarget": 60,
@@ -15,31 +15,31 @@
         "FanTarget": 50
       },
       "readings": {
-        "Temp1Read": 34.513,
-        "HumRead": 67.88,
+        "Temp1Read": 34.459,
+        "HumRead": 67.473,
         "CO2Read": null,
         "O2Read": null,
         "FanRead": null
       },
       "errors": {
-        "Temp": -4.512999999999998,
-        "Hum": -7.8799999999999955,
+        "Temp": -4.459000000000003,
+        "Hum": -7.472999999999999,
         "CO2": 0,
         "O2": 0,
         "Fan": 0
       },
       "pidTerms": {
         "Temp": {
-          "P": -3.6103999999999985,
-          "I": -4.286875,
+          "P": -3.567200000000003,
+          "I": -5,
           "D": 0,
           "output": 26.2
         },
         "Hum": {
-          "P": -4.727999999999997,
+          "P": -4.4838,
           "I": -10,
           "D": 0,
-          "output": 55
+          "output": 55.2
         },
         "CO2": {
           "P": 0,
@@ -59,14 +59,14 @@
       },
       "setpointsCalculated": {
         "TempSet": 26.2,
-        "HumSet": 55
+        "HumSet": 55.2
       },
       "setpointsApplied": {
         "TempSet": 26.2,
-        "HumSet": 55
+        "HumSet": 55.2
       },
       "overridden": false,
-      "calculationTime_ms": 617
+      "calculationTime_ms": 1303
     }
   ]
 }
