@@ -130,7 +130,8 @@ class MemmertDaemon:
                     # Extract temperature value from response
                     parts = response.split(":")
                     if len(parts) > 1:
-                        temp_str = parts[-1].strip()
+                        # Strip whitespace and null bytes before converting
+                        temp_str = parts[-1].strip().rstrip('\x00')
                         temp_value = float(temp_str)
                         readings[f"TempSensor{i}Read"] = round(temp_value, 3)
                     else:
@@ -382,6 +383,7 @@ class MemmertDaemon:
                 'readings': {},
                 'setpoints': {}
             }
+
     
     def load_history(self) -> Dict[str, Any]:
         """Load existing history."""
