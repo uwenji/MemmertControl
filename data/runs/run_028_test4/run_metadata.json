@@ -2,10 +2,10 @@
   "runId": "run_028_test4",
   "runName": "test4",
   "runType": "door_opening",
-  "status": "running",
+  "status": "completed",
   "startTime": "2025-10-30T12:25:41.345Z",
-  "endTime": null,
-  "durationMinutes": null,
+  "endTime": "2025-10-30T12:45:41.093Z",
+  "durationMinutes": 20,
   "bioreactorState": {
     "empty": true,
     "contents": null,
@@ -47,7 +47,47 @@
     }
   },
   "plannedDisturbances": [],
-  "actualEvents": [],
+  "actualEvents": [
+    {
+      "timestamp": "2025-10-30T12:38:00.110Z",
+      "elapsed_sec": 735,
+      "type": "door_opening",
+      "category": "general",
+      "details": {},
+      "recordedBy": "operator",
+      "notes": ""
+    },
+    {
+      "timestamp": "2025-10-30T12:38:06.875Z",
+      "elapsed_sec": 742,
+      "type": "door_opening",
+      "category": "general",
+      "details": {},
+      "recordedBy": "operator",
+      "notes": ""
+    },
+    {
+      "timestamp": "2025-10-30T12:38:24.419Z",
+      "elapsed_sec": 760,
+      "type": "custom",
+      "category": "general",
+      "details": {},
+      "recordedBy": "operator",
+      "notes": ""
+    },
+    {
+      "timestamp": "2025-10-30T12:45:41.093Z",
+      "elapsed_sec": 1196,
+      "type": "system",
+      "category": "run_stop",
+      "details": {
+        "reason": "test complete",
+        "duration_min": 20
+      },
+      "recordedBy": "system",
+      "notes": ""
+    }
+  ],
   "testProtocol": {
     "name": "test4",
     "duration_minutes": null
