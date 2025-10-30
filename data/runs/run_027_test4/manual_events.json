@@ -1,4 +1,17 @@
 {
   "runId": "run_027_test4",
-  "events": []
+  "events": [
+    {
+      "timestamp": "2025-10-30T12:22:44.157Z",
+      "elapsed_sec": 29,
+      "type": "system",
+      "category": "run_stop",
+      "details": {
+        "reason": "raspberry pi offline",
+        "duration_min": 0
+      },
+      "recordedBy": "system",
+      "notes": ""
+    }
+  ]
 }
