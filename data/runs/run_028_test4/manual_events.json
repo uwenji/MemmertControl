@@ -1,4 +1,14 @@
 {
   "runId": "run_028_test4",
-  "events": []
+  "events": [
+    {
+      "timestamp": "2025-10-30T12:38:00.110Z",
+      "elapsed_sec": 735,
+      "type": "door_opening",
+      "category": "general",
+      "details": {},
+      "recordedBy": "operator",
+      "notes": ""
+    }
+  ]
 }
