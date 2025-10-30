@@ -1,0 +1,89 @@
+{
+  "runId": "run_023_baseline_test",
+  "description": "PID-generated setpoint schedule for this run (filtered by run time range)",
+  "runStartTime": "2025-10-30T10:08:39.206Z",
+  "runEndTime": "2025-10-30T10:13:54.954Z",
+  "totalPoints": 5,
+  "schedule": [
+    {
+      "timestamp": "2025-10-30T10:09:12.711Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 30.2,
+        "HumSet": 59
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-30T10:09:12.711Z"
+    },
+    {
+      "timestamp": "2025-10-30T10:10:12.906Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 30.2,
+        "HumSet": 58.7
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-30T10:10:12.906Z"
+    },
+    {
+      "timestamp": "2025-10-30T10:11:12.667Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 30.1,
+        "HumSet": 59
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-30T10:11:12.667Z"
+    },
+    {
+      "timestamp": "2025-10-30T10:12:12.799Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 30.1,
+        "HumSet": 59
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-30T10:12:12.799Z"
+    },
+    {
+      "timestamp": "2025-10-30T10:12:58.256Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 30.3,
+        "HumSet": 59.3
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-30T10:12:58.256Z"
+    }
+  ]
+}
