@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "lastUpdated": "2025-10-30T10:59:35.606Z",
-  "totalRuns": 26,
+  "lastUpdated": "2025-10-30T12:22:15.002Z",
+  "totalRuns": 27,
   "runs": [
     {
       "runId": "run_001_baseline_test",
@@ -414,6 +414,18 @@
         "totalMinutes": 4,
         "formatted": "0h 4m"
       }
+    },
+    {
+      "runId": "run_027_test4",
+      "runName": "test4",
+      "runType": "door_opening",
+      "date": "2025-10-30",
+      "startTime": "2025-10-30T12:22:09.089Z",
+      "startedAt": "2025-10-30T12:22:09.089Z",
+      "status": "running",
+      "dataPath": "data/runs/run_027_test4/",
+      "tags": [],
+      "quality": "pending"
     }
   ]
 }
