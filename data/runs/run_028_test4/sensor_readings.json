@@ -1,7 +1,7 @@
 {
   "runId": "run_028_test4",
   "sampleInterval_sec": 1,
-  "totalSamples": 4,
+  "totalSamples": 5,
   "startTime": "2025-10-30T12:25:41.345Z",
   "variables": [
     "Temp1Read",
@@ -72,6 +72,25 @@
     {
       "timestamp": "2025-10-30T13:34:19.162492",
       "elapsed_sec": 514,
+      "readings": {
+        "Temp1Read": null,
+        "HumRead": null,
+        "CO2Read": null,
+        "O2Read": null,
+        "FanRead": null
+      },
+      "setpoints": {
+        "TempSet": null,
+        "HumSet": null,
+        "CO2Set": null,
+        "O2Set": null,
+        "FanSet": null
+      },
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-30T13:36:58.775039",
+      "elapsed_sec": 674,
       "readings": {
         "Temp1Read": null,
         "HumRead": null,
