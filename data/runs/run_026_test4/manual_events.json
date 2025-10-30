@@ -1,4 +1,17 @@
 {
   "runId": "run_026_test4",
-  "events": []
+  "events": [
+    {
+      "timestamp": "2025-10-30T10:59:33.959Z",
+      "elapsed_sec": 240,
+      "type": "system",
+      "category": "run_stop",
+      "details": {
+        "reason": "no sensor readings - pi offline",
+        "duration_min": 4
+      },
+      "recordedBy": "system",
+      "notes": ""
+    }
+  ]
 }
