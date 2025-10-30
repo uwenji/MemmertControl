@@ -27,6 +27,18 @@
       "details": {},
       "recordedBy": "operator",
       "notes": ""
+    },
+    {
+      "timestamp": "2025-10-30T12:45:41.093Z",
+      "elapsed_sec": 1196,
+      "type": "system",
+      "category": "run_stop",
+      "details": {
+        "reason": "test complete",
+        "duration_min": 20
+      },
+      "recordedBy": "system",
+      "notes": ""
     }
   ]
 }
