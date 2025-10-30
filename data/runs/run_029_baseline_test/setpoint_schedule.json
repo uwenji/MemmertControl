@@ -1,0 +1,61 @@
+{
+  "runId": "run_029_baseline_test",
+  "description": "PID-generated setpoint schedule for this run (filtered by run time range)",
+  "runStartTime": "2025-10-30T13:26:21.142Z",
+  "runEndTime": "2025-10-30T13:30:51.414Z",
+  "totalPoints": 4,
+  "schedule": [
+    {
+      "timestamp": "2025-10-30T13:26:52.673Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {},
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-30T13:26:52.673Z"
+    },
+    {
+      "timestamp": "2025-10-30T13:27:52.389Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {},
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-30T13:27:52.389Z"
+    },
+    {
+      "timestamp": "2025-10-30T13:28:52.614Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {},
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-30T13:28:52.614Z"
+    },
+    {
+      "timestamp": "2025-10-30T13:29:52.593Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {},
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-30T13:29:52.593Z"
+    }
+  ]
+}
