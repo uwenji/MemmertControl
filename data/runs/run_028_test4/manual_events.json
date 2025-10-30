@@ -9,6 +9,15 @@
       "details": {},
       "recordedBy": "operator",
       "notes": ""
+    },
+    {
+      "timestamp": "2025-10-30T12:38:06.875Z",
+      "elapsed_sec": 742,
+      "type": "door_opening",
+      "category": "general",
+      "details": {},
+      "recordedBy": "operator",
+      "notes": ""
     }
   ]
 }
