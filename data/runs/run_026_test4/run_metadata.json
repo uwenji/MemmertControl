@@ -2,10 +2,10 @@
   "runId": "run_026_test4",
   "runName": "test4",
   "runType": "baseline",
-  "status": "running",
+  "status": "completed",
   "startTime": "2025-10-30T10:55:30.804Z",
-  "endTime": null,
-  "durationMinutes": null,
+  "endTime": "2025-10-30T10:59:33.959Z",
+  "durationMinutes": 4,
   "bioreactorState": {
     "empty": true,
     "contents": null,
@@ -47,7 +47,20 @@
     }
   },
   "plannedDisturbances": [],
-  "actualEvents": [],
+  "actualEvents": [
+    {
+      "timestamp": "2025-10-30T10:59:33.959Z",
+      "elapsed_sec": 240,
+      "type": "system",
+      "category": "run_stop",
+      "details": {
+        "reason": "no sensor readings - pi offline",
+        "duration_min": 4
+      },
+      "recordedBy": "system",
+      "notes": ""
+    }
+  ],
   "testProtocol": {
     "name": "test4",
     "duration_minutes": null
