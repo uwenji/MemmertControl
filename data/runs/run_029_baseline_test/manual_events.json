@@ -12,6 +12,18 @@
       },
       "recordedBy": "test_timer",
       "notes": "Test event at 3-minute mark"
+    },
+    {
+      "timestamp": "2025-10-30T13:30:51.414Z",
+      "elapsed_sec": 270,
+      "type": "system",
+      "category": "run_stop",
+      "details": {
+        "reason": "test complete",
+        "duration_min": 5
+      },
+      "recordedBy": "system",
+      "notes": ""
     }
   ]
 }
