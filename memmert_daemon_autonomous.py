@@ -382,8 +382,6 @@ class MemmertDaemon:
                 'readings': {},
                 'setpoints': {}
             }
-                'setpoints': {}
-            }
     
     def load_history(self) -> Dict[str, Any]:
         """Load existing history."""
