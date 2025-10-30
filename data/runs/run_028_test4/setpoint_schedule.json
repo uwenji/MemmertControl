@@ -2,8 +2,8 @@
   "runId": "run_028_test4",
   "description": "PID-generated setpoint schedule for this run (filtered by run time range)",
   "runStartTime": "2025-10-30T12:25:44.747Z",
-  "runEndTime": "2025-10-30T12:40:44.757Z",
-  "totalPoints": 15,
+  "runEndTime": "2025-10-30T12:45:41.093Z",
+  "totalPoints": 20,
   "schedule": [
     {
       "timestamp": "2025-10-30T12:26:09.390Z",
@@ -199,6 +199,71 @@
       "setpoints": {},
       "pidCalculated": true,
       "calculatedAt": "2025-10-30T12:40:09.161Z"
+    },
+    {
+      "timestamp": "2025-10-30T12:41:09.206Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {},
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-30T12:41:09.206Z"
+    },
+    {
+      "timestamp": "2025-10-30T12:42:09.234Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {},
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-30T12:42:09.234Z"
+    },
+    {
+      "timestamp": "2025-10-30T12:43:09.184Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {},
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-30T12:43:09.184Z"
+    },
+    {
+      "timestamp": "2025-10-30T12:44:09.198Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {},
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-30T12:44:09.198Z"
+    },
+    {
+      "timestamp": "2025-10-30T12:45:09.241Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {},
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-30T12:45:09.241Z"
     }
   ]
 }
