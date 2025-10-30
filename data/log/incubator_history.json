@@ -4,65 +4,11 @@
     "device_ip": "192.168.100.100:80",
     "max_hours": 3.0,
     "description": "Rolling history of Memmert incubator data",
-    "last_updated": "2025-10-30T11:42:33.255443",
-    "total_entries": 144,
-    "time_span_hours": 3.0
+    "last_updated": "2025-10-30T11:45:19.402095",
+    "total_entries": 142,
+    "time_span_hours": 2.97
   },
   "data": [
-    {
-      "timestamp": "2025-10-30T08:42:43.577204",
-      "mode": "Timer",
-      "readings": {
-        "Temp1Read": 24.095,
-        "HumRead": 55.118,
-        "CO2Read": null,
-        "O2Read": null,
-        "FanRead": null
-      },
-      "setpoints": {
-        "TempSet": 24.1,
-        "HumSet": 55.3,
-        "CO2Set": null,
-        "O2Set": null,
-        "FanSet": null
-      }
-    },
-    {
-      "timestamp": "2025-10-30T08:43:53.253186",
-      "mode": "Timer",
-      "readings": {
-        "Temp1Read": 24.083,
-        "HumRead": 55.118,
-        "CO2Read": null,
-        "O2Read": null,
-        "FanRead": null
-      },
-      "setpoints": {
-        "TempSet": 24.1,
-        "HumSet": 55.3,
-        "CO2Set": null,
-        "O2Set": null,
-        "FanSet": null
-      }
-    },
-    {
-      "timestamp": "2025-10-30T08:45:03.709337",
-      "mode": "Timer",
-      "readings": {
-        "Temp1Read": 24.088,
-        "HumRead": 55.118,
-        "CO2Read": null,
-        "O2Read": null,
-        "FanRead": null
-      },
-      "setpoints": {
-        "TempSet": 24.1,
-        "HumSet": 55.3,
-        "CO2Set": null,
-        "O2Set": null,
-        "FanSet": null
-      }
-    },
     {
       "timestamp": "2025-10-30T08:46:13.456184",
       "mode": "Timer",
@@ -2596,6 +2542,24 @@
       "setpoints": {
         "TempSet": 30.2,
         "HumSet": 58.9,
+        "CO2Set": null,
+        "O2Set": null,
+        "FanSet": null
+      }
+    },
+    {
+      "timestamp": "2025-10-30T11:44:24.225389",
+      "mode": "Unknown",
+      "readings": {
+        "Temp1Read": null,
+        "HumRead": null,
+        "CO2Read": null,
+        "O2Read": null,
+        "FanRead": null
+      },
+      "setpoints": {
+        "TempSet": null,
+        "HumSet": null,
         "CO2Set": null,
         "O2Set": null,
         "FanSet": null
