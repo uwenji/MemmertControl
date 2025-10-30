@@ -4,65 +4,11 @@
     "device_ip": "192.168.100.100:80",
     "max_hours": 3.0,
     "description": "Rolling history of Memmert incubator data",
-    "last_updated": "2025-10-30T12:06:00.894894",
-    "total_entries": 133,
-    "time_span_hours": 2.98
+    "last_updated": "2025-10-30T12:08:41.250165",
+    "total_entries": 131,
+    "time_span_hours": 2.97
   },
   "data": [
-    {
-      "timestamp": "2025-10-30T09:06:06.674567",
-      "mode": "Timer",
-      "readings": {
-        "Temp1Read": 24.115,
-        "HumRead": 55.693,
-        "CO2Read": null,
-        "O2Read": null,
-        "FanRead": null
-      },
-      "setpoints": {
-        "TempSet": 24.1,
-        "HumSet": 55.3,
-        "CO2Set": null,
-        "O2Set": null,
-        "FanSet": null
-      }
-    },
-    {
-      "timestamp": "2025-10-30T09:07:17.198911",
-      "mode": "Timer",
-      "readings": {
-        "Temp1Read": 24.11,
-        "HumRead": 55.602,
-        "CO2Read": null,
-        "O2Read": null,
-        "FanRead": null
-      },
-      "setpoints": {
-        "TempSet": 24.1,
-        "HumSet": 55.3,
-        "CO2Set": null,
-        "O2Set": null,
-        "FanSet": null
-      }
-    },
-    {
-      "timestamp": "2025-10-30T09:08:27.452790",
-      "mode": "Timer",
-      "readings": {
-        "Temp1Read": 24.133,
-        "HumRead": 55.633,
-        "CO2Read": null,
-        "O2Read": null,
-        "FanRead": null
-      },
-      "setpoints": {
-        "TempSet": 24.1,
-        "HumSet": 55.3,
-        "CO2Set": null,
-        "O2Set": null,
-        "FanSet": null
-      }
-    },
     {
       "timestamp": "2025-10-30T09:09:38.093830",
       "mode": "Timer",
@@ -2387,6 +2333,24 @@
     },
     {
       "timestamp": "2025-10-30T12:05:05.742134",
+      "mode": "Unknown",
+      "readings": {
+        "Temp1Read": null,
+        "HumRead": null,
+        "CO2Read": null,
+        "O2Read": null,
+        "FanRead": null
+      },
+      "setpoints": {
+        "TempSet": null,
+        "HumSet": null,
+        "CO2Set": null,
+        "O2Set": null,
+        "FanSet": null
+      }
+    },
+    {
+      "timestamp": "2025-10-30T12:07:46.095880",
       "mode": "Unknown",
       "readings": {
         "Temp1Read": null,
