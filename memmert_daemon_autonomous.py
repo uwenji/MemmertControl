@@ -18,6 +18,13 @@ from typing import Dict, Any, Optional
 sys.path.insert(0, str(Path(__file__).parent / 'archive'))
 from atmoweb import AtmoWebClient
 
+# Import Atlas I2C for temperature sensors
+try:
+    from AtlasI2C import AtlasI2C
+    ATLAS_AVAILABLE = True
+except ImportError:
+    ATLAS_AVAILABLE = False
+
 
 class MemmertDaemon:
     """Fully autonomous daemon with smart git conflict resolution."""
@@ -30,7 +37,8 @@ class MemmertDaemon:
         max_hours: float = 3.0,
         log_interval: int = 60,
         sync_interval: int = 10,
-        git_repo_path: Optional[Path] = None
+        git_repo_path: Optional[Path] = None,
+        atlas_addresses: list = [66, 67, 69]
     ):
         self.incubator_ip = incubator_ip
         self.log_file = log_file
@@ -38,6 +46,7 @@ class MemmertDaemon:
         self.max_hours = max_hours
         self.log_interval = log_interval
         self.sync_interval = sync_interval
+        self.atlas_addresses = atlas_addresses
         
         if git_repo_path:
             self.git_repo_path = git_repo_path
@@ -51,6 +60,13 @@ class MemmertDaemon:
         self.logger = logging.getLogger(__name__)
         self._setup_git_ssh()
         self.client = AtmoWebClient(ip=incubator_ip)
+        
+        # Initialize Atlas sensors
+        self.atlas_sensors = []
+        if ATLAS_AVAILABLE:
+            self._setup_atlas_sensors()
+        else:
+            self.logger.warning("⚠️  AtlasI2C not available, temperature sensors disabled")
     
     def _setup_git_ssh(self):
         """Setup SSH for git."""
@@ -65,6 +81,73 @@ class MemmertDaemon:
         
         if ssh_key:
             os.environ['GIT_SSH_COMMAND'] = f'ssh -i {ssh_key} -o IdentitiesOnly=yes -o StrictHostKeyChecking=no'
+    
+    def _setup_atlas_sensors(self):
+        """Initialize Atlas I2C temperature sensors."""
+        try:
+            for i, addr in enumerate(self.atlas_addresses, 1):
+                try:
+                    sensor = AtlasI2C(address=addr, moduletype="RTD", name=f"Sensor{i}")
+                    # Test if sensor responds
+                    sensor.write("R")
+                    time.sleep(sensor.long_timeout)
+                    response = sensor.read()
+                    
+                    if "Success" in response or "Error" not in response:
+                        self.atlas_sensors.append(sensor)
+                        self.logger.info(f"✓ Atlas sensor {i} initialized at address {addr}")
+                    else:
+                        self.logger.warning(f"⚠️  Sensor at address {addr} not responding properly")
+                except Exception as e:
+                    self.logger.error(f"✗ Failed to initialize sensor at address {addr}: {e}")
+                    
+            if self.atlas_sensors:
+                self.logger.info(f"🌡️  {len(self.atlas_sensors)} Atlas temperature sensors ready")
+            else:
+                self.logger.warning("⚠️  No Atlas sensors initialized")
+                
+        except Exception as e:
+            self.logger.error(f"Atlas sensor setup error: {e}")
+    
+    def read_atlas_sensors(self) -> Dict[str, Optional[float]]:
+        """Read temperature from all Atlas RTD sensors."""
+        readings = {}
+        
+        if not ATLAS_AVAILABLE or not self.atlas_sensors:
+            return readings
+        
+        for i, sensor in enumerate(self.atlas_sensors, 1):
+            try:
+                # Send read command
+                sensor.write("R")
+                time.sleep(sensor.long_timeout)
+                
+                # Read response
+                response = sensor.read()
+                
+                # Parse response: "Success RTD 66 Sensor1: 25.123"
+                if "Success" in response:
+                    # Extract temperature value from response
+                    parts = response.split(":")
+                    if len(parts) > 1:
+                        temp_str = parts[-1].strip()
+                        temp_value = float(temp_str)
+                        readings[f"TempSensor{i}Read"] = round(temp_value, 3)
+                    else:
+                        readings[f"TempSensor{i}Read"] = None
+                        self.logger.warning(f"⚠️  Could not parse sensor {i} response: {response}")
+                else:
+                    readings[f"TempSensor{i}Read"] = None
+                    self.logger.warning(f"⚠️  Sensor {i} error: {response}")
+                    
+            except ValueError as e:
+                readings[f"TempSensor{i}Read"] = None
+                self.logger.error(f"✗ Sensor {i} value error: {e}")
+            except Exception as e:
+                readings[f"TempSensor{i}Read"] = None
+                self.logger.error(f"✗ Sensor {i} read failed: {e}")
+        
+        return readings
     
     def _git_run(self, cmd: list, timeout: int = 30) -> subprocess.CompletedProcess:
         """Run git command in repo directory."""
@@ -248,12 +331,18 @@ class MemmertDaemon:
             return False
     
     def read_incubator_data(self) -> Dict[str, Any]:
-        """Read current data from incubator."""
+        """Read current data from incubator and Atlas sensors."""
         timestamp = datetime.now().isoformat()
         
         try:
             readings = self.client.get_readings()
             setpoints = self.client.get_setpoints()
+            
+            # Read Atlas temperature sensors
+            atlas_readings = self.read_atlas_sensors()
+            
+            # Merge Atlas readings with incubator readings
+            readings.update(atlas_readings)
             
             try:
                 mode_response = self.client.query(CurOp="")
@@ -270,7 +359,18 @@ class MemmertDaemon:
             
             temp = readings.get('Temp1Read', 'N/A')
             hum = readings.get('HumRead', 'N/A')
-            self.logger.info(f"📊 Temp={temp}°C, Hum={hum}%")
+            
+            # Log Atlas sensor readings if available
+            atlas_info = []
+            for i in range(1, 4):
+                sensor_key = f'TempSensor{i}Read'
+                if sensor_key in readings and readings[sensor_key] is not None:
+                    atlas_info.append(f"S{i}={readings[sensor_key]}°C")
+            
+            if atlas_info:
+                self.logger.info(f"📊 Temp={temp}°C, Hum={hum}% | {', '.join(atlas_info)}")
+            else:
+                self.logger.info(f"📊 Temp={temp}°C, Hum={hum}%")
             
             return entry
             
@@ -280,6 +380,8 @@ class MemmertDaemon:
                 'timestamp': timestamp,
                 'error': str(e),
                 'readings': {},
+                'setpoints': {}
+            }
                 'setpoints': {}
             }
     
@@ -533,6 +635,8 @@ def main():
     parser.add_argument('--log-interval', type=int, default=60)
     parser.add_argument('--sync-interval', type=int, default=10)
     parser.add_argument('--max-hours', type=float, default=3.0)
+    parser.add_argument('--atlas-addresses', nargs='+', type=int, default=[66, 67, 69],
+                        help='I2C addresses for Atlas RTD sensors (default: 66 67 69)')
     parser.add_argument('--verbose', action='store_true')
     
     args = parser.parse_args()
@@ -548,7 +652,8 @@ def main():
         incubator_ip=args.ip,
         log_interval=args.log_interval,
         sync_interval=args.sync_interval,
-        max_hours=args.max_hours
+        max_hours=args.max_hours,
+        atlas_addresses=args.atlas_addresses
     )
     
     daemon.run()
