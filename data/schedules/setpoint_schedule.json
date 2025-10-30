@@ -1,13 +1,13 @@
 {
   "metadata": {
-    "generated": "2025-10-30T13:55:31.664Z",
+    "generated": "2025-10-30T13:56:31.756Z",
     "generatedBy": "ControlLoop",
     "version": "1.0",
     "description": "Accumulated PID-generated setpoint schedule",
     "overridePID": false,
     "pidActive": true,
-    "iterationCount": 515,
-    "totalSchedulePoints": 857
+    "iterationCount": 516,
+    "totalSchedulePoints": 858
   },
   "schedule": [
     {
@@ -13446,6 +13446,19 @@
       "setpoints": {},
       "pidCalculated": true,
       "calculatedAt": "2025-10-30T13:55:31.174Z"
+    },
+    {
+      "timestamp": "2025-10-30T13:56:31.284Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {},
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-30T13:56:31.284Z"
     }
   ],
   "pidState": {
