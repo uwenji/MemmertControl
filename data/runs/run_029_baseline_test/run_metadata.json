@@ -2,10 +2,10 @@
   "runId": "run_029_baseline_test",
   "runName": "baseline_test",
   "runType": "step_response",
-  "status": "running",
+  "status": "completed",
   "startTime": "2025-10-30T13:26:17.833Z",
-  "endTime": null,
-  "durationMinutes": null,
+  "endTime": "2025-10-30T13:30:51.414Z",
+  "durationMinutes": 5,
   "bioreactorState": {
     "empty": true,
     "contents": null,
@@ -47,7 +47,32 @@
     }
   },
   "plannedDisturbances": [],
-  "actualEvents": [],
+  "actualEvents": [
+    {
+      "timestamp": "2025-10-30T13:30:28.151Z",
+      "elapsed_sec": 247,
+      "type": "observation",
+      "category": "test_action",
+      "details": {
+        "action": "LOG EVENT: Open Event Logger widget (toggle from Test Timer or Run Manager) → Type 'Test event at 3-minute mark' → Click Log",
+        "customInput": "Test event at 3-minute mark"
+      },
+      "recordedBy": "test_timer",
+      "notes": "Test event at 3-minute mark"
+    },
+    {
+      "timestamp": "2025-10-30T13:30:51.414Z",
+      "elapsed_sec": 270,
+      "type": "system",
+      "category": "run_stop",
+      "details": {
+        "reason": "test complete",
+        "duration_min": 5
+      },
+      "recordedBy": "system",
+      "notes": ""
+    }
+  ],
   "testProtocol": {
     "name": "test1",
     "duration_minutes": null
