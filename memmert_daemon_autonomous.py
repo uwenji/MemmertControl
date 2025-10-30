@@ -2,6 +2,7 @@
 """
 Memmert Control Daemon - Fully Autonomous
 Handles all git conflicts automatically, no manual intervention needed.
+FIXED VERSION: Enhanced error handling for Memmert connection issues
 """
 import json
 import logging
@@ -59,7 +60,14 @@ class MemmertDaemon:
         
         self.logger = logging.getLogger(__name__)
         self._setup_git_ssh()
-        self.client = AtmoWebClient(ip=incubator_ip)
+        
+        # Initialize client with better error handling
+        try:
+            self.client = AtmoWebClient(ip=incubator_ip)
+            self.logger.info(f"✓ AtmoWebClient initialized for {incubator_ip}")
+        except Exception as e:
+            self.logger.error(f"✗ Failed to initialize AtmoWebClient: {e}")
+            self.client = None
         
         # Initialize Atlas sensors
         self.atlas_sensors = []
@@ -207,114 +215,90 @@ class MemmertDaemon:
                 self._backup_log_file()
                 
                 # Stash changes
-                self._git_run(['git', 'add', '-A'])
-                self._git_run(['git', 'stash'])
+                self._git_run(['git', 'stash', 'push', '-m', 'auto-stash'])
             
-            # Try pull
-            result = self._git_run(['git', 'pull', '--rebase'])
+            # Pull
+            result = self._git_run(['git', 'pull', '--no-edit'])
             
             if result.returncode == 0:
-                # Success! Pop stash if needed
+                self.logger.info("✓ Pull successful")
+                
                 if has_changes:
-                    pop_result = self._git_run(['git', 'stash', 'pop'])
-                    if pop_result.returncode != 0:
-                        # Conflict in stash pop, keep stash
-                        self.logger.warning("Stash pop conflict, keeping stashed changes")
+                    # Try to apply stash
+                    apply_result = self._git_run(['git', 'stash', 'pop'])
+                    
+                    if apply_result.returncode != 0:
+                        # Stash conflict - resolve by keeping ours
+                        self.logger.warning("⚠️  Stash conflict, resolving...")
+                        self._restore_log_file()
+                        self._git_run(['git', 'stash', 'drop'])
                 
-                if "Already up to date" not in result.stdout:
-                    self.logger.info("↓ Pulled updates")
-                
-                self._restore_log_file()
                 return True
             
-            # Strategy 2: Pull failed, try reset and pull
-            self.logger.warning("Pull failed, trying reset...")
-            self.git_reset_to_clean_state()
-            
-            result = self._git_run(['git', 'pull', '--rebase'])
-            if result.returncode == 0:
-                self.logger.info("↓ Pulled updates (after reset)")
+            # If pull failed, check for conflicts
+            if "CONFLICT" in result.stdout or "CONFLICT" in result.stderr:
+                self.logger.warning("⚠️  Merge conflict detected, auto-resolving...")
+                
+                # Strategy 2: Accept their version for schedule, keep ours for log
+                self._git_run(['git', 'checkout', '--theirs', str(self.schedule_file)])
                 self._restore_log_file()
+                
+                # Add and continue merge
+                self._git_run(['git', 'add', '.'])
+                self._git_run(['git', 'commit', '--no-edit'])
+                
+                self.logger.info("✓ Conflicts resolved")
                 return True
             
-            # Strategy 3: Fetch and reset to remote
-            self.logger.warning("Pull still failed, syncing with remote...")
-            self._git_run(['git', 'fetch', 'origin'])
-            self._git_run(['git', 'reset', '--hard', 'origin/main'])
-            
-            self.logger.info("↓ Synced with remote (hard reset)")
-            self._restore_log_file()
-            return True
+            # Strategy 3: If all else fails, reset
+            self.logger.warning("⚠️  Pull failed, resetting to clean state...")
+            return self.git_reset_to_clean_state()
             
         except Exception as e:
-            self.logger.error(f"Git pull error: {e}")
-            self._restore_log_file()
+            self.logger.error(f"Pull failed: {e}")
             return False
     
     def git_push_with_retry(self, max_retries: int = 3, retry_delay: int = 5) -> bool:
-        """Push with retries and automatic conflict resolution."""
-        try:
-            # Try push with retries
-            for attempt in range(max_retries):
+        """Push with retry logic."""
+        for attempt in range(max_retries):
+            try:
                 result = self._git_run(['git', 'push'])
                 
                 if result.returncode == 0:
-                    self.logger.info("↑ Pushed")
+                    self.logger.info("✓ Push successful")
                     return True
                 
-                if attempt < max_retries - 1:
-                    self.logger.warning(f"Push failed ({attempt + 1}/{max_retries}), retrying...")
-                    time.sleep(retry_delay)
-            
-            # All retries failed - pull and try again
-            self.logger.info("Retries failed, pulling and retrying...")
-            
-            # Backup log file
-            self._backup_log_file()
-            
-            # Pull (will auto-resolve conflicts)
-            self.git_pull()
-            
-            # Restore log file
-            self._restore_log_file()
-            
-            # Re-add and commit log file
-            log_rel = self.log_file.relative_to(self.git_repo_path)
-            self._git_run(['git', 'add', str(log_rel)])
-            
-            # Check if there's something to commit
-            status = self._git_run(['git', 'status', '--porcelain', str(log_rel)])
-            if status.stdout.strip():
-                commit_msg = f"Update log: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
-                self._git_run(['git', 'commit', '-m', commit_msg])
-            
-            # Try push one more time
-            result = self._git_run(['git', 'push'])
-            
-            if result.returncode == 0:
-                self.logger.info("↑ Pushed (after sync)")
-                return True
-            else:
-                self.logger.error("Push failed after sync, will retry next cycle")
-                return False
+                # If rejected, try pull and retry
+                if "rejected" in result.stderr.lower() or "non-fast-forward" in result.stderr.lower():
+                    self.logger.info(f"⚠️  Push rejected, pulling... (attempt {attempt + 1}/{max_retries})")
+                    
+                    if self.git_pull():
+                        time.sleep(retry_delay)
+                        continue
+                    else:
+                        return False
                 
-        except Exception as e:
-            self.logger.error(f"Git push error: {e}")
-            return False
+                # Other push errors
+                self.logger.warning(f"Push error: {result.stderr}")
+                time.sleep(retry_delay)
+                
+            except Exception as e:
+                self.logger.error(f"Push attempt {attempt + 1} failed: {e}")
+                time.sleep(retry_delay)
+        
+        self.logger.error("✗ All push attempts failed")
+        return False
     
-    def git_commit_and_push(self) -> bool:
-        """Commit log file and push."""
+    def git_commit_and_push(self):
+        """Commit and push log changes."""
         try:
-            log_rel = self.log_file.relative_to(self.git_repo_path)
+            # Add only the log file
+            self._git_run(['git', 'add', str(self.log_file)])
             
-            # Add file
-            self._git_run(['git', 'add', str(log_rel)])
-            
-            # Check if changes exist
-            status = self._git_run(['git', 'status', '--porcelain', str(log_rel)])
-            
+            # Check if there are changes to commit
+            status = self._git_run(['git', 'status', '--porcelain'])
             if not status.stdout.strip():
-                return True  # No changes
+                return True
             
             # Commit
             commit_msg = f"Update log: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
@@ -331,59 +315,123 @@ class MemmertDaemon:
             self.logger.error(f"Git operation error: {e}")
             return False
     
-    def read_incubator_data(self) -> Dict[str, Any]:
-        """Read current data from incubator and Atlas sensors."""
-        timestamp = datetime.now().isoformat()
+    def test_incubator_connection(self) -> bool:
+        """Test if we can connect to the incubator and read data."""
+        if self.client is None:
+            self.logger.error("✗ Client not initialized")
+            return False
         
         try:
-            readings = self.client.get_readings()
-            setpoints = self.client.get_setpoints()
+            self.logger.info(f"🔍 Testing connection to incubator at {self.incubator_ip}...")
             
-            # Read Atlas temperature sensors
-            atlas_readings = self.read_atlas_sensors()
-            
-            # Merge Atlas readings with incubator readings
-            readings.update(atlas_readings)
-            
+            # Try to get status
+            status = self.client.get_status()
+            if status and 'readings' in status and 'setpoints' in status:
+                self.logger.info("✓ Connection test successful")
+                self.logger.debug(f"   Status: {status}")
+                return True
+            else:
+                self.logger.warning(f"⚠️  Got unexpected response: {status}")
+                return False
+                
+        except Exception as e:
+            self.logger.error(f"✗ Connection test failed: {e}")
+            return False
+    
+    def read_incubator_data(self) -> Dict[str, Any]:
+        """Read current data from incubator and Atlas sensors with enhanced error handling."""
+        timestamp = datetime.now().isoformat()
+        
+        # Initialize empty readings and setpoints
+        readings = {}
+        setpoints = {}
+        
+        # Try to read from incubator
+        if self.client is not None:
             try:
+                self.logger.debug(f"Reading from incubator at {self.incubator_ip}...")
+                
+                # Get readings with error handling
+                try:
+                    readings = self.client.get_readings()
+                    self.logger.debug(f"Got readings: {readings}")
+                    
+                    if readings is None:
+                        self.logger.warning("⚠️  get_readings() returned None")
+                        readings = {}
+                    elif not isinstance(readings, dict):
+                        self.logger.warning(f"⚠️  get_readings() returned unexpected type: {type(readings)}")
+                        readings = {}
+                        
+                except Exception as e:
+                    self.logger.error(f"✗ get_readings() failed: {e}", exc_info=True)
+                    readings = {}
+                
+                # Get setpoints with error handling
+                try:
+                    setpoints = self.client.get_setpoints()
+                    self.logger.debug(f"Got setpoints: {setpoints}")
+                    
+                    if setpoints is None:
+                        self.logger.warning("⚠️  get_setpoints() returned None")
+                        setpoints = {}
+                    elif not isinstance(setpoints, dict):
+                        self.logger.warning(f"⚠️  get_setpoints() returned unexpected type: {type(setpoints)}")
+                        setpoints = {}
+                        
+                except Exception as e:
+                    self.logger.error(f"✗ get_setpoints() failed: {e}", exc_info=True)
+                    setpoints = {}
+                    
+            except Exception as e:
+                self.logger.error(f"✗ Incubator read failed: {e}", exc_info=True)
+        else:
+            self.logger.warning("⚠️  Client not initialized, skipping incubator readings")
+        
+        # Read Atlas temperature sensors
+        atlas_readings = self.read_atlas_sensors()
+        
+        # Merge Atlas readings with incubator readings
+        readings.update(atlas_readings)
+        
+        # Get current mode
+        try:
+            if self.client is not None:
                 mode_response = self.client.query(CurOp="")
                 current_mode = mode_response.get('CurOp', 'Unknown')
-            except:
-                current_mode = 'Unknown'
-            
-            entry = {
-                'timestamp': timestamp,
-                'mode': current_mode,
-                'readings': readings,
-                'setpoints': setpoints
-            }
-            
-            temp = readings.get('Temp1Read', 'N/A')
-            hum = readings.get('HumRead', 'N/A')
-            
-            # Log Atlas sensor readings if available
-            atlas_info = []
-            for i in range(1, 4):
-                sensor_key = f'TempSensor{i}Read'
-                if sensor_key in readings and readings[sensor_key] is not None:
-                    atlas_info.append(f"S{i}={readings[sensor_key]}°C")
-            
-            if atlas_info:
-                self.logger.info(f"📊 Temp={temp}°C, Hum={hum}% | {', '.join(atlas_info)}")
             else:
-                self.logger.info(f"📊 Temp={temp}°C, Hum={hum}%")
-            
-            return entry
-            
+                current_mode = 'No Connection'
         except Exception as e:
-            self.logger.error(f"Read failed: {e}")
-            return {
-                'timestamp': timestamp,
-                'error': str(e),
-                'readings': {},
-                'setpoints': {}
-            }
-
+            self.logger.debug(f"Could not get mode: {e}")
+            current_mode = 'Unknown'
+        
+        entry = {
+            'timestamp': timestamp,
+            'mode': current_mode,
+            'readings': readings,
+            'setpoints': setpoints
+        }
+        
+        temp = readings.get('Temp1Read', 'N/A')
+        hum = readings.get('HumRead', 'N/A')
+        
+        # Log Atlas sensor readings if available
+        atlas_info = []
+        for i in range(1, 4):
+            sensor_key = f'TempSensor{i}Read'
+            if sensor_key in readings and readings[sensor_key] is not None:
+                atlas_info.append(f"S{i}={readings[sensor_key]}°C")
+        
+        if atlas_info:
+            self.logger.info(f"📊 Temp={temp}°C, Hum={hum}% | {', '.join(atlas_info)}")
+        else:
+            self.logger.info(f"📊 Temp={temp}°C, Hum={hum}%")
+        
+        # Warn if Memmert readings are missing
+        if temp == 'N/A' or temp is None:
+            self.logger.warning("⚠️  Memmert temperature reading is missing - check incubator connection!")
+        
+        return entry
     
     def load_history(self) -> Dict[str, Any]:
         """Load existing history."""
@@ -482,6 +530,10 @@ class MemmertDaemon:
             
             if not setpoints:
                 self.logger.warning("No setpoints in latest schedule entry")
+                return False
+            
+            if self.client is None:
+                self.logger.error("Cannot apply schedule - client not initialized")
                 return False
             
             self.logger.info(f"📅 Applying setpoints from schedule: {setpoints}")
@@ -605,9 +657,22 @@ class MemmertDaemon:
     
     def run(self):
         """Main daemon loop."""
-        self.logger.info("🚀 Memmert Daemon started (Autonomous Mode)")
+        self.logger.info("🚀 Memmert Daemon started (Autonomous Mode - FIXED)")
         self.logger.info(f"   Log: {self.log_interval}s | Sync: {self.sync_interval}s")
+        self.logger.info(f"   Incubator IP: {self.incubator_ip}")
+        self.logger.info(f"   Atlas sensors: {len(self.atlas_sensors)}")
         self.logger.info("")
+        
+        # Test connection on startup
+        if not self.test_incubator_connection():
+            self.logger.warning("⚠️⚠️⚠️  INCUBATOR CONNECTION FAILED  ⚠️⚠️⚠️")
+            self.logger.warning("The daemon will continue but Memmert readings will be unavailable.")
+            self.logger.warning("Please check:")
+            self.logger.warning(f"  1. Is the incubator powered on?")
+            self.logger.warning(f"  2. Is the network connection working?")
+            self.logger.warning(f"  3. Is {self.incubator_ip} the correct IP address?")
+            self.logger.warning(f"  4. Can you ping {self.incubator_ip}?")
+            self.logger.warning("")
         
         try:
             while True:
@@ -630,7 +695,7 @@ def main():
     """Entry point."""
     import argparse
     
-    parser = argparse.ArgumentParser(description='Memmert Control Daemon')
+    parser = argparse.ArgumentParser(description='Memmert Control Daemon (FIXED)')
     parser.add_argument('--ip', default='192.168.100.100')
     parser.add_argument('--log-interval', type=int, default=60)
     parser.add_argument('--sync-interval', type=int, default=10)
@@ -638,6 +703,8 @@ def main():
     parser.add_argument('--atlas-addresses', nargs='+', type=int, default=[66, 67, 69],
                         help='I2C addresses for Atlas RTD sensors (default: 66 67 69)')
     parser.add_argument('--verbose', action='store_true')
+    parser.add_argument('--test', action='store_true', 
+                        help='Test incubator connection and exit')
     
     args = parser.parse_args()
     
@@ -655,6 +722,26 @@ def main():
         max_hours=args.max_hours,
         atlas_addresses=args.atlas_addresses
     )
+    
+    if args.test:
+        print("\n" + "="*60)
+        print("TESTING INCUBATOR CONNECTION")
+        print("="*60)
+        success = daemon.test_incubator_connection()
+        print("="*60)
+        if success:
+            print("✓ Test PASSED")
+            print("\nTry reading data once:")
+            data = daemon.read_incubator_data()
+            print(json.dumps(data, indent=2))
+        else:
+            print("✗ Test FAILED")
+            print("\nThe incubator is not responding. Please check:")
+            print(f"  - Is the incubator at {args.ip} powered on?")
+            print(f"  - Can you ping {args.ip}?")
+            print(f"  - Is the network connection working?")
+        print("="*60)
+        sys.exit(0 if success else 1)
     
     daemon.run()
 
