@@ -2,10 +2,10 @@
   "runId": "run_027_test4",
   "runName": "test4",
   "runType": "door_opening",
-  "status": "running",
+  "status": "completed",
   "startTime": "2025-10-30T12:22:09.089Z",
-  "endTime": null,
-  "durationMinutes": null,
+  "endTime": "2025-10-30T12:22:44.157Z",
+  "durationMinutes": 0,
   "bioreactorState": {
     "empty": true,
     "contents": null,
@@ -47,7 +47,20 @@
     }
   },
   "plannedDisturbances": [],
-  "actualEvents": [],
+  "actualEvents": [
+    {
+      "timestamp": "2025-10-30T12:22:44.157Z",
+      "elapsed_sec": 29,
+      "type": "system",
+      "category": "run_stop",
+      "details": {
+        "reason": "raspberry pi offline",
+        "duration_min": 0
+      },
+      "recordedBy": "system",
+      "notes": ""
+    }
+  ],
   "testProtocol": {
     "name": "test4",
     "duration_minutes": null
