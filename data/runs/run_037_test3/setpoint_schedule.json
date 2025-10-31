@@ -2,8 +2,8 @@
   "runId": "run_037_test3",
   "description": "PID-generated setpoint schedule for this run (filtered by run time range)",
   "runStartTime": "2025-10-31T09:18:43.645Z",
-  "runEndTime": "2025-10-31T09:33:43.661Z",
-  "totalPoints": 15,
+  "runEndTime": "2025-10-31T09:48:43.671Z",
+  "totalPoints": 30,
   "schedule": [
     {
       "timestamp": "2025-10-31T09:19:08.055Z",
@@ -244,6 +244,246 @@
       },
       "pidCalculated": true,
       "calculatedAt": "2025-10-31T09:33:08.024Z"
+    },
+    {
+      "timestamp": "2025-10-31T09:34:07.982Z",
+      "targets": {
+        "TempTarget": 35,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 37.3,
+        "HumSet": 61.3
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-31T09:34:07.982Z"
+    },
+    {
+      "timestamp": "2025-10-31T09:35:08.276Z",
+      "targets": {
+        "TempTarget": 35,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 37.2,
+        "HumSet": 61.2
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-31T09:35:08.276Z"
+    },
+    {
+      "timestamp": "2025-10-31T09:36:08.125Z",
+      "targets": {
+        "TempTarget": 35,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 36.9,
+        "HumSet": 61
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-31T09:36:08.125Z"
+    },
+    {
+      "timestamp": "2025-10-31T09:37:08.037Z",
+      "targets": {
+        "TempTarget": 35,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 36.7,
+        "HumSet": 60.7
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-31T09:37:08.037Z"
+    },
+    {
+      "timestamp": "2025-10-31T09:38:08.188Z",
+      "targets": {
+        "TempTarget": 35,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 36.7,
+        "HumSet": 60.7
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-31T09:38:08.188Z"
+    },
+    {
+      "timestamp": "2025-10-31T09:39:07.865Z",
+      "targets": {
+        "TempTarget": 35,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 36.5,
+        "HumSet": 60.4
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-31T09:39:07.865Z"
+    },
+    {
+      "timestamp": "2025-10-31T09:40:08.125Z",
+      "targets": {
+        "TempTarget": 35,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 36.4,
+        "HumSet": 59
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-31T09:40:08.125Z"
+    },
+    {
+      "timestamp": "2025-10-31T09:41:07.683Z",
+      "targets": {
+        "TempTarget": 35,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 36.1,
+        "HumSet": 59.2
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-31T09:41:07.683Z"
+    },
+    {
+      "timestamp": "2025-10-31T09:42:08.308Z",
+      "targets": {
+        "TempTarget": 35,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 36,
+        "HumSet": 60.5
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-31T09:42:08.308Z"
+    },
+    {
+      "timestamp": "2025-10-31T09:43:07.940Z",
+      "targets": {
+        "TempTarget": 35,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 35.9,
+        "HumSet": 60.5
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-31T09:43:07.940Z"
+    },
+    {
+      "timestamp": "2025-10-31T09:44:08.331Z",
+      "targets": {
+        "TempTarget": 35,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 35.8,
+        "HumSet": 60.6
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-31T09:44:08.331Z"
+    },
+    {
+      "timestamp": "2025-10-31T09:45:08.201Z",
+      "targets": {
+        "TempTarget": 35,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 35.6,
+        "HumSet": 59.3
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-31T09:45:08.201Z"
+    },
+    {
+      "timestamp": "2025-10-31T09:46:08.221Z",
+      "targets": {
+        "TempTarget": 35,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 35.4,
+        "HumSet": 58.6
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-31T09:46:08.221Z"
+    },
+    {
+      "timestamp": "2025-10-31T09:47:08.264Z",
+      "targets": {
+        "TempTarget": 35,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 35.4,
+        "HumSet": 58.7
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-31T09:47:08.264Z"
+    },
+    {
+      "timestamp": "2025-10-31T09:48:07.990Z",
+      "targets": {
+        "TempTarget": 35,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 35.3,
+        "HumSet": 59.3
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-31T09:48:07.990Z"
     }
   ]
 }
