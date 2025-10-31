@@ -1,4 +1,17 @@
 {
   "runId": "run_031_baseline_test",
-  "events": []
+  "events": [
+    {
+      "timestamp": "2025-10-31T07:52:13.248Z",
+      "elapsed_sec": 201,
+      "type": "observation",
+      "category": "test_action",
+      "details": {
+        "action": "LOG EVENT: Open Event Logger widget (toggle from Test Timer or Run Manager) → Type 'Test event at 3-minute mark' → Click Log",
+        "customInput": "test event at 3-minute mark"
+      },
+      "recordedBy": "test_timer",
+      "notes": "test event at 3-minute mark"
+    }
+  ]
 }
