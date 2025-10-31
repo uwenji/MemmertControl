@@ -4,53 +4,11 @@
     "device_ip": "192.168.100.100:80",
     "max_hours": 3.0,
     "description": "Rolling history of Memmert incubator data",
-    "last_updated": "2025-10-31T08:28:33.153584",
-    "total_entries": 145,
-    "time_span_hours": 2.99
+    "last_updated": "2025-10-31T08:30:04.556133",
+    "total_entries": 144,
+    "time_span_hours": 2.98
   },
   "data": [
-    {
-      "timestamp": "2025-10-31T05:28:48.085410",
-      "mode": "Timer",
-      "readings": {
-        "Temp1Read": 29.578,
-        "HumRead": 58.576,
-        "CO2Read": null,
-        "O2Read": null,
-        "FanRead": null,
-        "TempSensor1Read": 30.307,
-        "TempSensor2Read": 31.191,
-        "TempSensor3Read": 31.022
-      },
-      "setpoints": {
-        "TempSet": 29.6,
-        "HumSet": 58.6,
-        "CO2Set": null,
-        "O2Set": null,
-        "FanSet": null
-      }
-    },
-    {
-      "timestamp": "2025-10-31T05:30:01.239884",
-      "mode": "Timer",
-      "readings": {
-        "Temp1Read": 29.589,
-        "HumRead": 58.578,
-        "CO2Read": null,
-        "O2Read": null,
-        "FanRead": null,
-        "TempSensor1Read": 30.307,
-        "TempSensor2Read": 31.19,
-        "TempSensor3Read": 31.02
-      },
-      "setpoints": {
-        "TempSet": 29.6,
-        "HumSet": 58.6,
-        "CO2Set": null,
-        "O2Set": null,
-        "FanSet": null
-      }
-    },
     {
       "timestamp": "2025-10-31T05:31:12.848252",
       "mode": "Timer",
@@ -3049,6 +3007,27 @@
       "setpoints": {
         "TempSet": 28.4,
         "HumSet": 58.8,
+        "CO2Set": null,
+        "O2Set": null,
+        "FanSet": null
+      }
+    },
+    {
+      "timestamp": "2025-10-31T08:29:59.786105",
+      "mode": "Timer",
+      "readings": {
+        "Temp1Read": 29.148,
+        "HumRead": 60.086,
+        "CO2Read": null,
+        "O2Read": null,
+        "FanRead": null,
+        "TempSensor1Read": 30.138,
+        "TempSensor2Read": 31.023,
+        "TempSensor3Read": 30.784
+      },
+      "setpoints": {
+        "TempSet": 28.3,
+        "HumSet": 59.0,
         "CO2Set": null,
         "O2Set": null,
         "FanSet": null
