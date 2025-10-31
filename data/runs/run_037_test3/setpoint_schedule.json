@@ -2,8 +2,8 @@
   "runId": "run_037_test3",
   "description": "PID-generated setpoint schedule for this run (filtered by run time range)",
   "runStartTime": "2025-10-31T09:18:43.645Z",
-  "runEndTime": "2025-10-31T11:33:43.760Z",
-  "totalPoints": 135,
+  "runEndTime": "2025-10-31T11:45:03.758Z",
+  "totalPoints": 146,
   "schedule": [
     {
       "timestamp": "2025-10-31T09:19:08.055Z",
@@ -2164,6 +2164,182 @@
       },
       "pidCalculated": true,
       "calculatedAt": "2025-10-31T11:33:09.147Z"
+    },
+    {
+      "timestamp": "2025-10-31T11:34:09.214Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 24.6,
+        "HumSet": 60.3
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-31T11:34:09.214Z"
+    },
+    {
+      "timestamp": "2025-10-31T11:35:08.714Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 24.6,
+        "HumSet": 60.3
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-31T11:35:08.714Z"
+    },
+    {
+      "timestamp": "2025-10-31T11:36:09.396Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 24.8,
+        "HumSet": 58.7
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-31T11:36:09.396Z"
+    },
+    {
+      "timestamp": "2025-10-31T11:37:09.051Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 24.8,
+        "HumSet": 58.8
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-31T11:37:09.051Z"
+    },
+    {
+      "timestamp": "2025-10-31T11:38:08.859Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 24.8,
+        "HumSet": 58.8
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-31T11:38:08.859Z"
+    },
+    {
+      "timestamp": "2025-10-31T11:39:09.166Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 24.8,
+        "HumSet": 58.8
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-31T11:39:09.166Z"
+    },
+    {
+      "timestamp": "2025-10-31T11:40:09.203Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 25.2,
+        "HumSet": 59.2
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-31T11:40:09.203Z"
+    },
+    {
+      "timestamp": "2025-10-31T11:41:08.949Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 25.2,
+        "HumSet": 59.2
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-31T11:41:08.949Z"
+    },
+    {
+      "timestamp": "2025-10-31T11:42:09.085Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 25,
+        "HumSet": 60.1
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-31T11:42:09.085Z"
+    },
+    {
+      "timestamp": "2025-10-31T11:43:09.177Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 25,
+        "HumSet": 60.4
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-31T11:43:09.177Z"
+    },
+    {
+      "timestamp": "2025-10-31T11:44:08.999Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 25.1,
+        "HumSet": 58.7
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-31T11:44:08.999Z"
     }
   ]
 }
