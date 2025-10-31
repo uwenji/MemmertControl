@@ -1,0 +1,93 @@
+{
+  "runId": "run_035_baseline_test",
+  "runName": "baseline_test",
+  "runType": "step_response",
+  "status": "running",
+  "startTime": "2025-10-31T09:02:04.125Z",
+  "endTime": null,
+  "durationMinutes": null,
+  "bioreactorState": {
+    "empty": true,
+    "contents": null,
+    "approximateMass_kg": 0.5,
+    "notes": ""
+  },
+  "targets": {
+    "TempTarget": 30,
+    "HumTarget": 60,
+    "CO2Target": 1000,
+    "O2Target": 21,
+    "FanTarget": 50
+  },
+  "pidParameters": {
+    "Temp": {
+      "Kp": 2,
+      "Ki": 0.1,
+      "Kd": 0.5,
+      "min": 10,
+      "max": 40,
+      "integralMax": 5,
+      "asymmetric": false
+    },
+    "Hum": {
+      "Kp": 1.5,
+      "Ki": 0.05,
+      "Kd": 0.3,
+      "min": 20,
+      "max": 95,
+      "integralMax": 10,
+      "asymmetric": false
+    },
+    "CO2": {
+      "Kp": 0.5,
+      "Ki": 0.02,
+      "Kd": 0.1,
+      "min": 0,
+      "max": 5000,
+      "integralMax": 100,
+      "asymmetric": false
+    },
+    "O2": {
+      "Kp": 1,
+      "Ki": 0.05,
+      "Kd": 0.2,
+      "min": 0,
+      "max": 100,
+      "integralMax": 10,
+      "asymmetric": false
+    },
+    "Fan": {
+      "Kp": 1,
+      "Ki": 0.1,
+      "Kd": 0.05,
+      "min": 0,
+      "max": 100,
+      "integralMax": 10,
+      "asymmetric": false
+    }
+  },
+  "plannedDisturbances": [],
+  "actualEvents": [],
+  "testProtocol": {
+    "name": "test1",
+    "duration_minutes": null
+  },
+  "endConditions": {
+    "type": "manual",
+    "criteria": "Manual stop by operator"
+  },
+  "dataQuality": {
+    "totalReadings": 0,
+    "missedReadings": 0,
+    "dataCompletenessPercent": 100,
+    "sensorStatus": {}
+  },
+  "performanceMetrics": {
+    "calculated": false,
+    "calculatedAt": null,
+    "metrics": {}
+  },
+  "analysisNotes": "",
+  "version": "1.0.0",
+  "dataSchemaVersion": "1.0"
+}
