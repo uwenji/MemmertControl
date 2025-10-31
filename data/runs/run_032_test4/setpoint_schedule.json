@@ -2,8 +2,8 @@
   "runId": "run_032_test4",
   "description": "PID-generated setpoint schedule for this run (filtered by run time range)",
   "runStartTime": "2025-10-31T08:18:14.568Z",
-  "runEndTime": "2025-10-31T08:33:14.585Z",
-  "totalPoints": 15,
+  "runEndTime": "2025-10-31T08:38:23.218Z",
+  "totalPoints": 20,
   "schedule": [
     {
       "timestamp": "2025-10-31T08:18:26.798Z",
@@ -244,6 +244,86 @@
       },
       "pidCalculated": true,
       "calculatedAt": "2025-10-31T08:32:26.806Z"
+    },
+    {
+      "timestamp": "2025-10-31T08:33:26.688Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 28.9,
+        "HumSet": 72.6
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-31T08:33:26.688Z"
+    },
+    {
+      "timestamp": "2025-10-31T08:34:26.936Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 29.1,
+        "HumSet": 65.6
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-31T08:34:26.936Z"
+    },
+    {
+      "timestamp": "2025-10-31T08:35:27.081Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 29.1,
+        "HumSet": 65.6
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-31T08:35:27.081Z"
+    },
+    {
+      "timestamp": "2025-10-31T08:36:27.153Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 29.1,
+        "HumSet": 60.5
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-31T08:36:27.153Z"
+    },
+    {
+      "timestamp": "2025-10-31T08:37:27.128Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 29.1,
+        "HumSet": 60.5
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-31T08:37:27.128Z"
     }
   ]
 }
