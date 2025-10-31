@@ -1,0 +1,29 @@
+{
+  "runId": "run_037_test3",
+  "description": "User-defined target schedule for this run (filtered by run time range)",
+  "runStartTime": "2025-10-31T09:18:43.645Z",
+  "runEndTime": "2025-10-31T09:33:43.661Z",
+  "totalPoints": 2,
+  "schedule": [
+    {
+      "timestamp": "2025-10-31T09:24:18.586Z",
+      "targets": {
+        "TempTarget": 35,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      }
+    },
+    {
+      "timestamp": "2025-10-31T09:24:23.594Z",
+      "targets": {
+        "TempTarget": 35,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      }
+    }
+  ]
+}
