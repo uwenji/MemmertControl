@@ -2,10 +2,10 @@
   "runId": "run_032_test4",
   "runName": "test4",
   "runType": "door_opening",
-  "status": "running",
+  "status": "completed",
   "startTime": "2025-10-31T08:18:11.296Z",
-  "endTime": null,
-  "durationMinutes": null,
+  "endTime": "2025-10-31T08:38:23.218Z",
+  "durationMinutes": 20,
   "bioreactorState": {
     "empty": true,
     "contents": null,
@@ -47,7 +47,38 @@
     }
   },
   "plannedDisturbances": [],
-  "actualEvents": [],
+  "actualEvents": [
+    {
+      "timestamp": "2025-10-31T08:24:40.146Z",
+      "elapsed_sec": 386,
+      "type": "custom",
+      "category": "general",
+      "details": {},
+      "recordedBy": "operator",
+      "notes": ""
+    },
+    {
+      "timestamp": "2025-10-31T08:32:21.852Z",
+      "elapsed_sec": 847,
+      "type": "custom",
+      "category": "general",
+      "details": {},
+      "recordedBy": "operator",
+      "notes": ""
+    },
+    {
+      "timestamp": "2025-10-31T08:38:23.218Z",
+      "elapsed_sec": 1209,
+      "type": "system",
+      "category": "run_stop",
+      "details": {
+        "reason": "test complete",
+        "duration_min": 20
+      },
+      "recordedBy": "system",
+      "notes": ""
+    }
+  ],
   "testProtocol": {
     "name": "test4",
     "duration_minutes": null
