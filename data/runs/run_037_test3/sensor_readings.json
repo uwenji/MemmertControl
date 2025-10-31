@@ -1,0 +1,15 @@
+{
+  "runId": "run_037_test3",
+  "sampleInterval_sec": 1,
+  "totalSamples": 0,
+  "startTime": "2025-10-31T09:18:40.336Z",
+  "variables": [
+    "Temp1Read",
+    "HumRead",
+    "CO2Read",
+    "TempSet",
+    "HumSet",
+    "CO2Set"
+  ],
+  "data": []
+}
