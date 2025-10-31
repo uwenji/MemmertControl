@@ -1,6 +1,6 @@
 {
   "runId": "run_037_test3",
-  "totalActions": 4,
+  "totalActions": 5,
   "description": "PID control actions (one per poll interval)",
   "actions": [
     {
@@ -382,6 +382,101 @@
       },
       "overridden": false,
       "calculationTime_ms": 1311
+    },
+    {
+      "timestamp": "2025-10-31T09:23:07.671Z",
+      "elapsed_sec": 264,
+      "iteration": 4,
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "readings": {
+        "Temp1Read": 28.966,
+        "HumRead": 60.021,
+        "CO2Read": null,
+        "O2Read": null,
+        "FanRead": null,
+        "TempSensor1Read": 29.915,
+        "TempSensor2Read": 30.553,
+        "TempSensor3Read": 30.093
+      },
+      "errors": {
+        "Temp": -0.5530000000000008,
+        "Hum": -0.021000000000000796,
+        "CO2": 0,
+        "O2": 0,
+        "Fan": 0
+      },
+      "pidTerms": {
+        "Temp": {
+          "P": -0.663600000000001,
+          "I": -0.38,
+          "D": 0,
+          "output": 29,
+          "gains": {
+            "Kp": 1.2,
+            "Ki": 0.08,
+            "Kd": 0.3,
+            "direction": "down"
+          }
+        },
+        "Hum": {
+          "P": -0.021000000000000796,
+          "I": 0.44918429999999426,
+          "D": 0,
+          "output": 60.4,
+          "gains": {
+            "Kp": 1,
+            "Ki": 0.06,
+            "Kd": 0.25,
+            "direction": "down"
+          }
+        },
+        "CO2": {
+          "P": 0,
+          "I": 0,
+          "D": 0,
+          "gains": {
+            "Kp": 0.3,
+            "Ki": 0.01,
+            "Kd": 0.05
+          }
+        },
+        "O2": {
+          "P": 0,
+          "I": 0,
+          "D": 0,
+          "gains": {
+            "Kp": 0.5,
+            "Ki": 0.02,
+            "Kd": 0.1
+          }
+        },
+        "Fan": {
+          "P": 0,
+          "I": 0,
+          "D": 0,
+          "gains": {
+            "Kp": 0.5,
+            "Ki": 0.05,
+            "Kd": 0.02
+          }
+        }
+      },
+      "setpointsCalculated": {
+        "TempSet": 29,
+        "HumSet": 60.4
+      },
+      "setpointsApplied": {
+        "TempSet": 29,
+        "HumSet": 60.4
+      },
+      "overridden": false,
+      "calculationTime_ms": 903
     }
   ]
 }
