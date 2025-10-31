@@ -1,0 +1,249 @@
+{
+  "runId": "run_032_test4",
+  "description": "PID-generated setpoint schedule for this run (filtered by run time range)",
+  "runStartTime": "2025-10-31T08:18:14.568Z",
+  "runEndTime": "2025-10-31T08:33:14.585Z",
+  "totalPoints": 15,
+  "schedule": [
+    {
+      "timestamp": "2025-10-31T08:18:26.798Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 29.2,
+        "HumSet": 58.9
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-31T08:18:26.798Z"
+    },
+    {
+      "timestamp": "2025-10-31T08:19:26.951Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 29.2,
+        "HumSet": 59.1
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-31T08:19:26.951Z"
+    },
+    {
+      "timestamp": "2025-10-31T08:20:26.787Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 29.2,
+        "HumSet": 60
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-31T08:20:26.787Z"
+    },
+    {
+      "timestamp": "2025-10-31T08:21:27.143Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 29.1,
+        "HumSet": 60.3
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-31T08:21:27.143Z"
+    },
+    {
+      "timestamp": "2025-10-31T08:22:26.752Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 29.1,
+        "HumSet": 60.3
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-31T08:22:26.752Z"
+    },
+    {
+      "timestamp": "2025-10-31T08:23:26.748Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 29.1,
+        "HumSet": 58.8
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-31T08:23:26.748Z"
+    },
+    {
+      "timestamp": "2025-10-31T08:24:26.618Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 29.2,
+        "HumSet": 58.8
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-31T08:24:26.618Z"
+    },
+    {
+      "timestamp": "2025-10-31T08:25:27.088Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 26.4,
+        "HumSet": 70.7
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-31T08:25:27.088Z"
+    },
+    {
+      "timestamp": "2025-10-31T08:26:26.619Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 26.4,
+        "HumSet": 71
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-31T08:26:26.619Z"
+    },
+    {
+      "timestamp": "2025-10-31T08:27:26.794Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 27,
+        "HumSet": 64.4
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-31T08:27:26.794Z"
+    },
+    {
+      "timestamp": "2025-10-31T08:28:27.069Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 27.5,
+        "HumSet": 57.7
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-31T08:28:27.069Z"
+    },
+    {
+      "timestamp": "2025-10-31T08:29:26.903Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 27.5,
+        "HumSet": 57.8
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-31T08:29:26.903Z"
+    },
+    {
+      "timestamp": "2025-10-31T08:30:26.839Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 27.8,
+        "HumSet": 54.3
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-31T08:30:26.839Z"
+    },
+    {
+      "timestamp": "2025-10-31T08:31:26.806Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 27.6,
+        "HumSet": 68.6
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-31T08:31:26.806Z"
+    },
+    {
+      "timestamp": "2025-10-31T08:32:26.806Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 27.6,
+        "HumSet": 68.6
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-31T08:32:26.806Z"
+    }
+  ]
+}
