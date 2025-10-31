@@ -3,8 +3,8 @@
     "version": "1.0",
     "description": "Target schedule for PID control",
     "generatedBy": "ControlLoop",
-    "lastUpdated": "2025-10-31T09:59:35.818Z",
-    "totalPoints": 52
+    "lastUpdated": "2025-10-31T09:59:39.128Z",
+    "totalPoints": 53
   },
   "schedule": [
     {
@@ -519,6 +519,16 @@
     },
     {
       "timestamp": "2025-10-31T09:59:35.818Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      }
+    },
+    {
+      "timestamp": "2025-10-31T09:59:39.128Z",
       "targets": {
         "TempTarget": 30,
         "HumTarget": 60,
