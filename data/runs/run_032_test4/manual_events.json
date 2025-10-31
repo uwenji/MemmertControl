@@ -18,6 +18,18 @@
       "details": {},
       "recordedBy": "operator",
       "notes": ""
+    },
+    {
+      "timestamp": "2025-10-31T08:38:23.218Z",
+      "elapsed_sec": 1209,
+      "type": "system",
+      "category": "run_stop",
+      "details": {
+        "reason": "test complete",
+        "duration_min": 20
+      },
+      "recordedBy": "system",
+      "notes": ""
     }
   ]
 }
