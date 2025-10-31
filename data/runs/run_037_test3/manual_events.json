@@ -9,6 +9,15 @@
       "details": {},
       "recordedBy": "operator",
       "notes": ""
+    },
+    {
+      "timestamp": "2025-10-31T09:49:22.949Z",
+      "elapsed_sec": 1839,
+      "type": "custom",
+      "category": "general",
+      "details": {},
+      "recordedBy": "operator",
+      "notes": ""
     }
   ]
 }
