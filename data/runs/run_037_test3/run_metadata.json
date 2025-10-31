@@ -1,0 +1,111 @@
+{
+  "runId": "run_037_test3",
+  "runName": "test3",
+  "runType": "step_response",
+  "status": "running",
+  "startTime": "2025-10-31T09:18:40.336Z",
+  "endTime": null,
+  "durationMinutes": null,
+  "bioreactorState": {
+    "empty": true,
+    "contents": null,
+    "approximateMass_kg": 0.5,
+    "notes": ""
+  },
+  "targets": {
+    "TempTarget": 30,
+    "HumTarget": 60,
+    "CO2Target": 1000,
+    "O2Target": 21,
+    "FanTarget": 50
+  },
+  "pidParameters": {
+    "Temp": {
+      "Kp": {
+        "up": 0.6,
+        "down": 1.2
+      },
+      "Ki": {
+        "up": 0.03,
+        "down": 0.08
+      },
+      "Kd": {
+        "up": 0.15,
+        "down": 0.3
+      },
+      "min": 10,
+      "max": 40,
+      "integralMax": 5,
+      "asymmetric": true
+    },
+    "Hum": {
+      "Kp": {
+        "up": 0.4,
+        "down": 1
+      },
+      "Ki": {
+        "up": 0.02,
+        "down": 0.06
+      },
+      "Kd": {
+        "up": 0.1,
+        "down": 0.25
+      },
+      "min": 20,
+      "max": 95,
+      "integralMax": 10,
+      "asymmetric": true
+    },
+    "CO2": {
+      "Kp": 0.3,
+      "Ki": 0.01,
+      "Kd": 0.05,
+      "min": 0,
+      "max": 2000,
+      "integralMax": 100,
+      "asymmetric": false
+    },
+    "O2": {
+      "Kp": 0.5,
+      "Ki": 0.02,
+      "Kd": 0.1,
+      "min": 10,
+      "max": 30,
+      "integralMax": 2,
+      "asymmetric": false
+    },
+    "Fan": {
+      "Kp": 0.5,
+      "Ki": 0.05,
+      "Kd": 0.02,
+      "min": 0,
+      "max": 100,
+      "integralMax": 20,
+      "asymmetric": false
+    }
+  },
+  "plannedDisturbances": [],
+  "actualEvents": [],
+  "testProtocol": {
+    "name": "test3",
+    "duration_minutes": null
+  },
+  "endConditions": {
+    "type": "manual",
+    "criteria": "Manual stop by operator"
+  },
+  "dataQuality": {
+    "totalReadings": 0,
+    "missedReadings": 0,
+    "dataCompletenessPercent": 100,
+    "sensorStatus": {}
+  },
+  "performanceMetrics": {
+    "calculated": false,
+    "calculatedAt": null,
+    "metrics": {}
+  },
+  "analysisNotes": "",
+  "version": "1.0.0",
+  "dataSchemaVersion": "1.0"
+}
