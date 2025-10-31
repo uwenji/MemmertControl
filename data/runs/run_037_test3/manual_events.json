@@ -18,6 +18,15 @@
       "details": {},
       "recordedBy": "operator",
       "notes": ""
+    },
+    {
+      "timestamp": "2025-10-31T10:00:07.259Z",
+      "elapsed_sec": 2484,
+      "type": "custom",
+      "category": "general",
+      "details": {},
+      "recordedBy": "operator",
+      "notes": ""
     }
   ]
 }
