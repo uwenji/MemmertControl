@@ -1,7 +1,7 @@
 {
   "runId": "run_035_baseline_test",
   "sampleInterval_sec": 1,
-  "totalSamples": 1,
+  "totalSamples": 2,
   "startTime": "2025-10-31T09:02:04.125Z",
   "variables": [
     "Temp1Read",
@@ -27,6 +27,28 @@
       },
       "setpoints": {
         "TempSet": 29.1,
+        "HumSet": 60.4,
+        "CO2Set": null,
+        "O2Set": null,
+        "FanSet": null
+      },
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-31T10:03:33.717750",
+      "elapsed_sec": 86,
+      "readings": {
+        "Temp1Read": 28.492,
+        "HumRead": 60.599,
+        "CO2Read": null,
+        "O2Read": null,
+        "FanRead": null,
+        "TempSensor1Read": 29.75,
+        "TempSensor2Read": 30.451,
+        "TempSensor3Read": 29.801
+      },
+      "setpoints": {
+        "TempSet": 29,
         "HumSet": 60.4,
         "CO2Set": null,
         "O2Set": null,
