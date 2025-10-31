@@ -2,8 +2,8 @@
   "runId": "run_037_test3",
   "description": "User-defined target schedule for this run (filtered by run time range)",
   "runStartTime": "2025-10-31T09:18:43.645Z",
-  "runEndTime": "2025-10-31T09:48:43.671Z",
-  "totalPoints": 2,
+  "runEndTime": "2025-10-31T10:03:43.689Z",
+  "totalPoints": 8,
   "schedule": [
     {
       "timestamp": "2025-10-31T09:24:18.586Z",
@@ -19,6 +19,66 @@
       "timestamp": "2025-10-31T09:24:23.594Z",
       "targets": {
         "TempTarget": 35,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      }
+    },
+    {
+      "timestamp": "2025-10-31T09:48:58.708Z",
+      "targets": {
+        "TempTarget": 35,
+        "HumTarget": 70,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      }
+    },
+    {
+      "timestamp": "2025-10-31T09:49:01.278Z",
+      "targets": {
+        "TempTarget": 35,
+        "HumTarget": 70,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      }
+    },
+    {
+      "timestamp": "2025-10-31T09:59:30.241Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 70,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      }
+    },
+    {
+      "timestamp": "2025-10-31T09:59:32.099Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 70,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      }
+    },
+    {
+      "timestamp": "2025-10-31T09:59:35.818Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      }
+    },
+    {
+      "timestamp": "2025-10-31T09:59:39.128Z",
+      "targets": {
+        "TempTarget": 30,
         "HumTarget": 60,
         "CO2Target": 400,
         "O2Target": 21,
