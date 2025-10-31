@@ -2,10 +2,10 @@
   "runId": "run_037_test3",
   "runName": "test3",
   "runType": "step_response",
-  "status": "running",
+  "status": "completed",
   "startTime": "2025-10-31T09:18:40.336Z",
-  "endTime": null,
-  "durationMinutes": null,
+  "endTime": "2025-10-31T11:45:03.758Z",
+  "durationMinutes": 146,
   "bioreactorState": {
     "empty": true,
     "contents": null,
@@ -85,7 +85,56 @@
     }
   },
   "plannedDisturbances": [],
-  "actualEvents": [],
+  "actualEvents": [
+    {
+      "timestamp": "2025-10-31T09:24:41.318Z",
+      "elapsed_sec": 358,
+      "type": "custom",
+      "category": "general",
+      "details": {},
+      "recordedBy": "operator",
+      "notes": ""
+    },
+    {
+      "timestamp": "2025-10-31T09:49:22.949Z",
+      "elapsed_sec": 1839,
+      "type": "custom",
+      "category": "general",
+      "details": {},
+      "recordedBy": "operator",
+      "notes": ""
+    },
+    {
+      "timestamp": "2025-10-31T10:00:07.259Z",
+      "elapsed_sec": 2484,
+      "type": "custom",
+      "category": "general",
+      "details": {},
+      "recordedBy": "operator",
+      "notes": ""
+    },
+    {
+      "timestamp": "2025-10-31T10:00:21.139Z",
+      "elapsed_sec": 2497,
+      "type": "custom",
+      "category": "general",
+      "details": {},
+      "recordedBy": "operator",
+      "notes": ""
+    },
+    {
+      "timestamp": "2025-10-31T11:45:03.758Z",
+      "elapsed_sec": 8780,
+      "type": "system",
+      "category": "run_stop",
+      "details": {
+        "reason": "test complete",
+        "duration_min": 146
+      },
+      "recordedBy": "system",
+      "notes": ""
+    }
+  ],
   "testProtocol": {
     "name": "test3",
     "duration_minutes": null
