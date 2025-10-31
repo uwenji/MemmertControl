@@ -1,7 +1,7 @@
 {
   "runId": "run_037_test3",
   "sampleInterval_sec": 1,
-  "totalSamples": 55,
+  "totalSamples": 56,
   "startTime": "2025-10-31T09:18:40.336Z",
   "variables": [
     "Temp1Read",
@@ -1212,6 +1212,28 @@
         "TempSensor1Read": 35.556,
         "TempSensor2Read": 36.314,
         "TempSensor3Read": 35.572
+      },
+      "setpoints": {
+        "TempSet": 21.9,
+        "HumSet": 59.4,
+        "CO2Set": null,
+        "O2Set": null,
+        "FanSet": null
+      },
+      "incubatorReadings": {}
+    },
+    {
+      "timestamp": "2025-10-31T11:34:10.255712",
+      "elapsed_sec": 4527,
+      "readings": {
+        "Temp1Read": 33.881,
+        "HumRead": 59.633,
+        "CO2Read": null,
+        "O2Read": null,
+        "FanRead": null,
+        "TempSensor1Read": 35.529,
+        "TempSensor2Read": 36.307,
+        "TempSensor3Read": 35.556
       },
       "setpoints": {
         "TempSet": 21.9,
