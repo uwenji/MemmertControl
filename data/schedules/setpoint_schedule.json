@@ -1,13 +1,13 @@
 {
   "metadata": {
-    "generated": "2025-10-31T14:07:41.385Z",
+    "generated": "2025-10-31T14:08:41.189Z",
     "generatedBy": "ControlLoop",
     "version": "1.0",
     "description": "Accumulated PID-generated setpoint schedule",
     "overridePID": false,
     "pidActive": true,
-    "iterationCount": 1008,
-    "totalSchedulePoints": 1350
+    "iterationCount": 1009,
+    "totalSchedulePoints": 1351
   },
   "schedule": [
     {
@@ -21241,14 +21241,30 @@
       },
       "pidCalculated": true,
       "calculatedAt": "2025-10-31T14:07:40.789Z"
+    },
+    {
+      "timestamp": "2025-10-31T14:08:40.562Z",
+      "targets": {
+        "TempTarget": 30,
+        "HumTarget": 60,
+        "CO2Target": 400,
+        "O2Target": 21,
+        "FanTarget": 50
+      },
+      "setpoints": {
+        "TempSet": 28.6,
+        "HumSet": 58.6
+      },
+      "pidCalculated": true,
+      "calculatedAt": "2025-10-31T14:08:40.562Z"
     }
   ],
   "pidState": {
     "Temp": {
-      "integral": -5,
-      "previousError": -0.8290000000000006,
-      "previousTime": 1761919660789,
-      "iterationCount": 889,
+      "integral": -4.75,
+      "previousError": -0.8880000000000017,
+      "previousTime": 1761919720562,
+      "iterationCount": 890,
       "parameters": {
         "Kp": {
           "up": 0.6,
@@ -21262,9 +21278,9 @@
     },
     "Hum": {
       "integral": -10,
-      "previousError": -0.8830000000000027,
-      "previousTime": 1761919660789,
-      "iterationCount": 889,
+      "previousError": -0.820999999999998,
+      "previousTime": 1761919720562,
+      "iterationCount": 890,
       "parameters": {
         "Kp": {
           "up": 0.4,
