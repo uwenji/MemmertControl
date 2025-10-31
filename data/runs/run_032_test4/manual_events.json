@@ -1,4 +1,14 @@
 {
   "runId": "run_032_test4",
-  "events": []
+  "events": [
+    {
+      "timestamp": "2025-10-31T08:24:40.146Z",
+      "elapsed_sec": 386,
+      "type": "custom",
+      "category": "general",
+      "details": {},
+      "recordedBy": "operator",
+      "notes": ""
+    }
+  ]
 }
