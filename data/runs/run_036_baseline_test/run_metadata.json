@@ -2,10 +2,10 @@
   "runId": "run_036_baseline_test",
   "runName": "baseline_test",
   "runType": "step_response",
-  "status": "running",
+  "status": "completed",
   "startTime": "2025-10-31T09:09:45.972Z",
-  "endTime": null,
-  "durationMinutes": null,
+  "endTime": "2025-10-31T09:10:50.937Z",
+  "durationMinutes": 1,
   "bioreactorState": {
     "empty": true,
     "contents": null,
@@ -85,7 +85,20 @@
     }
   },
   "plannedDisturbances": [],
-  "actualEvents": [],
+  "actualEvents": [
+    {
+      "timestamp": "2025-10-31T09:10:50.937Z",
+      "elapsed_sec": 62,
+      "type": "system",
+      "category": "run_stop",
+      "details": {
+        "reason": "test complete",
+        "duration_min": 1
+      },
+      "recordedBy": "system",
+      "notes": ""
+    }
+  ],
   "testProtocol": {
     "name": "test1",
     "duration_minutes": null
