@@ -4,32 +4,11 @@
     "device_ip": "192.168.100.100:80",
     "max_hours": 3.0,
     "description": "Rolling history of Memmert incubator data",
-    "last_updated": "2025-11-02T01:07:00.083145",
+    "last_updated": "2025-11-02T01:08:13.550661",
     "total_entries": 149,
     "time_span_hours": 3.0
   },
   "data": [
-    {
-      "timestamp": "2025-11-01T22:07:11.099868",
-      "mode": "Timer",
-      "readings": {
-        "Temp1Read": 29.365,
-        "HumRead": 59.69,
-        "CO2Read": null,
-        "O2Read": null,
-        "FanRead": null,
-        "TempSensor1Read": 30.287,
-        "TempSensor2Read": 31.146,
-        "TempSensor3Read": 30.718
-      },
-      "setpoints": {
-        "TempSet": 29.4,
-        "HumSet": 59.4,
-        "CO2Set": null,
-        "O2Set": null,
-        "FanSet": null
-      }
-    },
     {
       "timestamp": "2025-11-01T22:08:23.564910",
       "mode": "Timer",
@@ -3128,6 +3107,27 @@
         "FanRead": null,
         "TempSensor1Read": 30.295,
         "TempSensor2Read": 31.108,
+        "TempSensor3Read": 30.728
+      },
+      "setpoints": {
+        "TempSet": 29.4,
+        "HumSet": 59.4,
+        "CO2Set": null,
+        "O2Set": null,
+        "FanSet": null
+      }
+    },
+    {
+      "timestamp": "2025-11-02T01:08:08.769358",
+      "mode": "Timer",
+      "readings": {
+        "Temp1Read": 29.393,
+        "HumRead": 59.447,
+        "CO2Read": null,
+        "O2Read": null,
+        "FanRead": null,
+        "TempSensor1Read": 30.296,
+        "TempSensor2Read": 31.106,
         "TempSensor3Read": 30.728
       },
       "setpoints": {
