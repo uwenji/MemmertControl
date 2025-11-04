@@ -4,53 +4,11 @@
     "device_ip": "192.168.100.100:80",
     "max_hours": 3.0,
     "description": "Rolling history of Memmert incubator data",
-    "last_updated": "2025-11-04T17:06:27.730874",
-    "total_entries": 150,
-    "time_span_hours": 3.0
+    "last_updated": "2025-11-04T17:07:40.448454",
+    "total_entries": 149,
+    "time_span_hours": 2.98
   },
   "data": [
-    {
-      "timestamp": "2025-11-04T14:06:27.738662",
-      "mode": "PermissionDenied",
-      "readings": {
-        "Temp1Read": null,
-        "HumRead": null,
-        "CO2Read": null,
-        "O2Read": null,
-        "FanRead": null,
-        "TempSensor1Read": 30.246,
-        "TempSensor2Read": 31.187,
-        "TempSensor3Read": 31.39
-      },
-      "setpoints": {
-        "TempSet": null,
-        "HumSet": null,
-        "CO2Set": null,
-        "O2Set": null,
-        "FanSet": null
-      }
-    },
-    {
-      "timestamp": "2025-11-04T14:07:39.462992",
-      "mode": "PermissionDenied",
-      "readings": {
-        "Temp1Read": null,
-        "HumRead": null,
-        "CO2Read": null,
-        "O2Read": null,
-        "FanRead": null,
-        "TempSensor1Read": 30.251,
-        "TempSensor2Read": 31.19,
-        "TempSensor3Read": 31.393
-      },
-      "setpoints": {
-        "TempSet": null,
-        "HumSet": null,
-        "CO2Set": null,
-        "O2Set": null,
-        "FanSet": null
-      }
-    },
     {
       "timestamp": "2025-11-04T14:08:53.451748",
       "mode": "PermissionDenied",
@@ -3150,6 +3108,27 @@
         "TempSensor1Read": 30.241,
         "TempSensor2Read": 31.188,
         "TempSensor3Read": 31.391
+      },
+      "setpoints": {
+        "TempSet": null,
+        "HumSet": null,
+        "CO2Set": null,
+        "O2Set": null,
+        "FanSet": null
+      }
+    },
+    {
+      "timestamp": "2025-11-04T17:07:35.694882",
+      "mode": "PermissionDenied",
+      "readings": {
+        "Temp1Read": null,
+        "HumRead": null,
+        "CO2Read": null,
+        "O2Read": null,
+        "FanRead": null,
+        "TempSensor1Read": 30.267,
+        "TempSensor2Read": 31.19,
+        "TempSensor3Read": 31.392
       },
       "setpoints": {
         "TempSet": null,
