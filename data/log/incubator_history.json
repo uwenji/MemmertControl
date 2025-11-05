@@ -4,53 +4,11 @@
     "device_ip": "192.168.100.100:80",
     "max_hours": 3.0,
     "description": "Rolling history of Memmert incubator data",
-    "last_updated": "2025-11-05T05:58:25.097389",
-    "total_entries": 63,
-    "time_span_hours": 2.98
+    "last_updated": "2025-11-05T06:01:19.914270",
+    "total_entries": 62,
+    "time_span_hours": 2.96
   },
   "data": [
-    {
-      "timestamp": "2025-11-05T02:59:23.441806",
-      "mode": "PermissionDenied",
-      "readings": {
-        "Temp1Read": null,
-        "HumRead": null,
-        "CO2Read": null,
-        "O2Read": null,
-        "FanRead": null,
-        "TempSensor1Read": 30.259,
-        "TempSensor2Read": 31.211,
-        "TempSensor3Read": 31.423
-      },
-      "setpoints": {
-        "TempSet": null,
-        "HumSet": null,
-        "CO2Set": null,
-        "O2Set": null,
-        "FanSet": null
-      }
-    },
-    {
-      "timestamp": "2025-11-05T03:00:35.215941",
-      "mode": "PermissionDenied",
-      "readings": {
-        "Temp1Read": null,
-        "HumRead": null,
-        "CO2Read": null,
-        "O2Read": null,
-        "FanRead": null,
-        "TempSensor1Read": 30.263,
-        "TempSensor2Read": 31.281,
-        "TempSensor3Read": 31.427
-      },
-      "setpoints": {
-        "TempSet": null,
-        "HumSet": null,
-        "CO2Set": null,
-        "O2Set": null,
-        "FanSet": null
-      }
-    },
     {
       "timestamp": "2025-11-05T03:03:30.164656",
       "mode": "PermissionDenied",
@@ -1322,6 +1280,27 @@
         "FanRead": null,
         "TempSensor1Read": 30.291,
         "TempSensor2Read": 31.234,
+        "TempSensor3Read": 31.435
+      },
+      "setpoints": {
+        "TempSet": null,
+        "HumSet": null,
+        "CO2Set": null,
+        "O2Set": null,
+        "FanSet": null
+      }
+    },
+    {
+      "timestamp": "2025-11-05T06:01:15.151548",
+      "mode": "PermissionDenied",
+      "readings": {
+        "Temp1Read": null,
+        "HumRead": null,
+        "CO2Read": null,
+        "O2Read": null,
+        "FanRead": null,
+        "TempSensor1Read": 30.292,
+        "TempSensor2Read": 31.236,
         "TempSensor3Read": 31.435
       },
       "setpoints": {
