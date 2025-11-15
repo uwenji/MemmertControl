@@ -3,29 +3,11 @@
     "created": "2025-11-10T18:14:43.327765",
     "device_ip": "192.168.100.100",
     "max_hours": 3.0,
-    "last_updated": "2025-11-15T06:44:43.391128",
+    "last_updated": "2025-11-15T06:46:17.312162",
     "total_entries": 115,
     "time_span_hours": 2.99
   },
   "data": [
-    {
-      "timestamp": "2025-11-15T03:45:30.440537",
-      "mode": "PermissionDenied",
-      "readings": {
-        "Temp1Read": null,
-        "HumRead": null,
-        "CO2Read": null,
-        "O2Read": null,
-        "FanRead": null
-      },
-      "setpoints": {
-        "TempSet": null,
-        "HumSet": null,
-        "CO2Set": null,
-        "O2Set": null,
-        "FanSet": null
-      }
-    },
     {
       "timestamp": "2025-11-15T03:47:04.385223",
       "mode": "PermissionDenied",
@@ -2062,6 +2044,24 @@
     },
     {
       "timestamp": "2025-11-15T06:44:42.138773",
+      "mode": "PermissionDenied",
+      "readings": {
+        "Temp1Read": null,
+        "HumRead": null,
+        "CO2Read": null,
+        "O2Read": null,
+        "FanRead": null
+      },
+      "setpoints": {
+        "TempSet": null,
+        "HumSet": null,
+        "CO2Set": null,
+        "O2Set": null,
+        "FanSet": null
+      }
+    },
+    {
+      "timestamp": "2025-11-15T06:46:16.131882",
       "mode": "PermissionDenied",
       "readings": {
         "Temp1Read": null,
