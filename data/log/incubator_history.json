@@ -3,9 +3,9 @@
     "created": "2025-11-10T18:14:43.327765",
     "device_ip": "192.168.100.100",
     "max_hours": 3.0,
-    "last_updated": "2026-02-02T11:54:23.199640",
-    "total_entries": 68,
-    "time_span_hours": 2.26
+    "last_updated": "2026-02-02T11:56:26.403786",
+    "total_entries": 69,
+    "time_span_hours": 2.3
   },
   "data": [
     {
@@ -1216,6 +1216,24 @@
     },
     {
       "timestamp": "2026-02-02T11:53:28.035743",
+      "mode": "Unknown",
+      "readings": {
+        "Temp1Read": null,
+        "HumRead": null,
+        "CO2Read": null,
+        "O2Read": null,
+        "FanRead": null
+      },
+      "setpoints": {
+        "TempSet": null,
+        "HumSet": null,
+        "CO2Set": null,
+        "O2Set": null,
+        "FanSet": null
+      }
+    },
+    {
+      "timestamp": "2026-02-02T11:55:31.247115",
       "mode": "Unknown",
       "readings": {
         "Temp1Read": null,
